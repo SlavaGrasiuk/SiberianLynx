@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
@@ -7,8 +6,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{F535943E-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{57BCA764-C412-4138-B32B-CC07AB45D129}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core", "libs\core\core.vcxproj", "{EE229D35-F82F-42C4-A426-40C9CE68D7AC}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F535943E-D807-4E13-AB2A-411E2047900C}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{F535943E-D807-4E13-AB2A-411E2047900C}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{F535943E-D807-4E13-AB2A-411E2047900C}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{F535943E-D807-4E13-AB2A-411E2047900C}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{57BCA764-C412-4138-B32B-CC07AB45D129}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{57BCA764-C412-4138-B32B-CC07AB45D129}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{57BCA764-C412-4138-B32B-CC07AB45D129}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{57BCA764-C412-4138-B32B-CC07AB45D129}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{EE229D35-F82F-42C4-A426-40C9CE68D7AC}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{EE229D35-F82F-42C4-A426-40C9CE68D7AC}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{EE229D35-F82F-42C4-A426-40C9CE68D7AC}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{EE229D35-F82F-42C4-A426-40C9CE68D7AC}.Release|VisualGDB.Build.0 = Release|VisualGDB
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE229D35-F82F-42C4-A426-40C9CE68D7AC} = {F535943E-D807-4E13-AB2A-411E2047900C}
 	EndGlobalSection
 EndGlobal

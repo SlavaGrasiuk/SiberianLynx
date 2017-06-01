@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EE229D35-F82F-42C4-A426-40C9CE68D7AC}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.1.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <TargetName>lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.1.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <TargetName>lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <DebugInformationFormat />
+      <Optimization>O2</Optimization>
+      <PositionIndependentCode>false</PositionIndependentCode>
+      <CLanguageStandard>C11</CLanguageStandard>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <SupportExceptions>true</SupportExceptions>
+      <SupportRTTI>true</SupportRTTI>
+      <AdditionalIncludeDirectories>..\..\..\..\src\core;..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc;..\..\..\..\src\3rdParty\scmRTOS\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <PositionIndependentCode>false</PositionIndependentCode>
+    </ClCompile>
+    <ClCompile>
+      <CLanguageStandard>C11</CLanguageStandard>
+    </ClCompile>
+    <ClCompile>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+    </ClCompile>
+    <ClCompile>
+      <SupportExceptions>true</SupportExceptions>
+    </ClCompile>
+    <ClCompile>
+      <SupportRTTI>true</SupportRTTI>
+      <Optimization>Og</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\src\core;..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc;..\..\..\..\src\3rdParty\scmRTOS\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="core-Debug.vgdbsettings" />
+    <None Include="core-Release.vgdbsettings" />
+    <None Include="mcu.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_services.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\scmRTOS.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\scmRTOS_defs.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\usrlib.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\ext\profiler\profiler.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\ext\recursive-mutex\recursive_mutex.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\ext\round-robin\round-robin.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc\os_target.h" />
+    <ClInclude Include="..\..\..\..\src\core\procsdef.hpp" />
+    <ClInclude Include="..\..\..\..\src\core\scmRTOS_CONFIG.h" />
+    <ClInclude Include="..\..\..\..\src\core\scmRTOS_extensions.h" />
+    <ClInclude Include="..\..\..\..\src\core\scmRTOS_TARGET_CFG.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_services.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\usrlib.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\ext\recursive-mutex\recursive_mutex.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc\os_target.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
