@@ -35,6 +35,9 @@
     <Filter Include="scmRTOS\port\cortex\mx-gcc">
       <UniqueIdentifier>{af6512ac-5bc9-4874-9140-2c456dea7e96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="startup">
+      <UniqueIdentifier>{343a0f80-0169-45fc-ad7b-a8d5ec10a021}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="core-Debug.vgdbsettings">
@@ -84,6 +87,10 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc\os_target.h">
       <Filter>scmRTOS\port\cortex\mx-gcc</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\core\commdef.hpp" />
+    <ClInclude Include="..\..\..\..\src\core\startup\default-hndl.hpp">
+      <Filter>startup</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.cpp">
@@ -100,6 +107,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc\os_target.cpp">
       <Filter>scmRTOS\port\cortex\mx-gcc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\reset.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\dev-vect.cpp">
+      <Filter>startup</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
