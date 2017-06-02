@@ -88,9 +88,6 @@
       <Filter>scmRTOS\port\cortex\mx-gcc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\core\commdef.hpp" />
-    <ClInclude Include="..\..\..\..\src\core\startup\default-hndl.hpp">
-      <Filter>startup</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.cpp">
@@ -108,10 +105,13 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc\os_target.cpp">
       <Filter>scmRTOS\port\cortex\mx-gcc</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\core\startup\reset.cpp">
+    <ClCompile Include="..\..\..\..\src\core\startup\InitCPU.cpp">
       <Filter>startup</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\core\startup\dev-vect.cpp">
+    <ClCompile Include="..\..\..\..\src\core\startup\Reset.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp">
       <Filter>startup</Filter>
     </ClCompile>
   </ItemGroup>

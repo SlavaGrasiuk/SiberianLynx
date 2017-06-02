@@ -1,29 +1,32 @@
 #include <commdef.hpp>
 
-using intfunc = void(*)();
+#define WEAK_ISR	[[gnu::weak, gnu::alias("_ZL15Default_Handlerv")]]		//mangled name for Default_Handler
 
+static void Default_Handler();
+[[noreturn]] static void Reset_Handler();
 MANGOFF void __libc_init_array();
 
-/* CPU interrupt vectors */
-extern "C" {
-	void NMI_Handler();
-	void HardFault_Handler();
-	void MemManage_Handler();
-	void BusFault_Handler();
-	void UsageFault_Handler();
-	void SVC_Handler();
-	void DebugMon_Handler();
-	void PendSV_Handler();
-	void SysTick_Handler();
-	[[noreturn]] void Reset_Handler();
-}
-
 namespace core {
-	void InitClocks();
+	void InitCPU();
 	[[noreturn]] void Main();
 }
 
-extern unsigned int _estack;
+/* CPU interrupt vectors */
+MANGOFF {
+	WEAK_ISR void NMI_Handler();
+	WEAK_ISR void HardFault_Handler();
+	WEAK_ISR void MemManage_Handler();
+	WEAK_ISR void BusFault_Handler();
+	WEAK_ISR void UsageFault_Handler();
+	WEAK_ISR void SVC_Handler();
+	WEAK_ISR void DebugMon_Handler();
+	WEAK_ISR void PendSV_Handler();
+	WEAK_ISR void SysTick_Handler();
+}
+
+extern unsigned int _estack;		//defined in linker script
+
+using intfunc = void(*)();
 
 [[gnu::used, gnu::section(".isr_vector_cpu")]] static const intfunc g_cpuVectors[] = {
 	reinterpret_cast<intfunc>(&_estack),
@@ -33,13 +36,13 @@ extern unsigned int _estack;
 	MemManage_Handler,
 	BusFault_Handler,
 	UsageFault_Handler,
-	0,
-	0,
-	0,
-	0,
+	nullptr,
+	nullptr,
+	nullptr,
+	nullptr,
 	SVC_Handler,
 	DebugMon_Handler,
-	0,
+	nullptr,
 	PendSV_Handler,
 	SysTick_Handler
 };
@@ -49,8 +52,8 @@ extern unsigned int _estack;
 Reset_Handler
 ==================
 */
-MANGOFF void Reset_Handler() {
-	extern unsigned int _sidata, _sdata, _edata, _sbss, _ebss;
+static void Reset_Handler() {
+	extern unsigned int _sidata, _sdata, _edata, _sbss, _ebss;		//defined in linker script
 	unsigned int *pulSrc = &_sidata;
 
 	/* Copy .data section */
@@ -63,7 +66,7 @@ MANGOFF void Reset_Handler() {
 		*(pulDest++) = 0;
 	}
 
-	core::InitClocks();
+	core::InitCPU();
 
 	/* Call global constructors from .init_array and .preinit_array sections */
 	__libc_init_array();
@@ -71,14 +74,15 @@ MANGOFF void Reset_Handler() {
 	core::Main();
 }
 
-#include "default-hndl.hpp"
-
-#pragma weak NMI_Handler		= Default_Handler
-#pragma weak HardFault_Handler	= Default_Handler
-#pragma weak MemManage_Handler	= Default_Handler
-#pragma weak BusFault_Handler	= Default_Handler
-#pragma weak UsageFault_Handler = Default_Handler
-#pragma weak SVC_Handler		= Default_Handler
-#pragma weak DebugMon_Handler	= Default_Handler
-#pragma weak PendSV_Handler		= Default_Handler
-#pragma weak SysTick_Handler	= Default_Handler
+/*
+==================
+Default_Handler
+==================
+*/
+static void Default_Handler() {
+	if constexpr (g_debug) {
+		__asm("bkpt #0");
+	} else {
+		while (true);
+	}
+}

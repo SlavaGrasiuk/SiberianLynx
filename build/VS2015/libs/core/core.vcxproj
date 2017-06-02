@@ -133,7 +133,6 @@
     <ClInclude Include="..\..\..\..\src\core\scmRTOS_CONFIG.h" />
     <ClInclude Include="..\..\..\..\src\core\scmRTOS_extensions.h" />
     <ClInclude Include="..\..\..\..\src\core\scmRTOS_TARGET_CFG.h" />
-    <ClInclude Include="..\..\..\..\src\core\startup\default-hndl.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.cpp" />
@@ -141,8 +140,9 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\usrlib.cpp" />
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\ext\recursive-mutex\recursive_mutex.cpp" />
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc\os_target.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\startup\dev-vect.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\startup\reset.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\startup\InitCPU.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\startup\Reset.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
