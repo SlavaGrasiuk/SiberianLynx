@@ -54,15 +54,15 @@ Reset_Handler
 */
 static void Reset_Handler() {
 	extern unsigned int _sidata, _sdata, _edata, _sbss, _ebss;		//defined in linker script
-	unsigned int *pulSrc = &_sidata;
+	auto pulSrc = &_sidata;
 
 	/* Copy .data section */
-	for (unsigned int *pulDest = &_sdata; pulDest < &_edata; ) {
+	for (auto pulDest = &_sdata; pulDest < &_edata; ) {
 		*(pulDest++) = *(pulSrc++);
 	}
 
 	/* Clear .bss section */
-	for (unsigned int *pulDest = &_sbss; pulDest < &_ebss; ) {
+	for (auto pulDest = &_sbss; pulDest < &_ebss; ) {
 		*(pulDest++) = 0;
 	}
 

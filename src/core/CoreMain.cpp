@@ -2,7 +2,7 @@
 #include <stm32f7xx.h>
 
 namespace core {
-	void Main();
+	[[noreturn]] void Main();
 }
 
 /*

@@ -8,3 +8,7 @@ static constexpr bool g_debug = true;
 static constexpr bool g_debug = false;
 #endif
 
+#define barrier()		__asm volatile("": : :"memory")		//Compiller memory barrier
+
+#define likely(x)		__builtin_expect((x),1)
+#define unlikely(x)		__builtin_expect((x),0)

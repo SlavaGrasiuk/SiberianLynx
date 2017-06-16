@@ -109,15 +109,6 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_adc_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_can.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_cec.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_conf_template.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_cortex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
@@ -127,22 +118,10 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_crc_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_cryp.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_cryp_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_dac.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_dac_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_dcmi.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_dcmi_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_def.h">
@@ -160,12 +139,6 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_dma_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_dsi.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_eth.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_flash.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
@@ -178,12 +151,6 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_gpio_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_hash.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_hash_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_hcd.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
@@ -191,48 +158,6 @@
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_i2c_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_i2s.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_irda.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_irda_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_iwdg.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_jpeg.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_lptim.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_ltdc.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_ltdc_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_mdios.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_mmc.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_nand.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_nor.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_pcd.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_pcd_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_pwr.h">
@@ -259,28 +184,10 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_rtc_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_sai.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_sai_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_sd.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_sdram.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_smartcard.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_smartcard_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_smbus.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_spdifrx.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_spi.h">
@@ -295,97 +202,13 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_tim_ex.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_uart_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_usart.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_usart_ex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_wwdg.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_adc.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_bus.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_cortex.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_crc.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_dac.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_dma.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_dma2d.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_exti.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_fmc.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_gpio.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_i2c.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_iwdg.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_lptim.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_pwr.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_rcc.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_rng.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_rtc.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_sdmmc.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_spi.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_system.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_tim.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_usart.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_usb.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_utils.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_wwdg.h">
-      <Filter>drv\HAL\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32_assert_template.h">
       <Filter>drv\HAL\Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h">
@@ -438,12 +261,6 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_adc_ex.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_can.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cec.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cortex.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
@@ -453,22 +270,10 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_crc_ex.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cryp.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cryp_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dac.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dac_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dcmi.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dcmi_ex.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dfsdm.c">
@@ -483,12 +288,6 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma_ex.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dsi.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_eth.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_flash.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
@@ -498,12 +297,6 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_gpio.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_hash.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_hash_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_hcd.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
@@ -511,48 +304,6 @@
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2c_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2s.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_irda.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_iwdg.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_jpeg.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_lptim.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_ltdc.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_ltdc_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_mdios.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_mmc.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_msp_template.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_nand.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_nor.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pcd.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pcd_ex.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pwr.c">
@@ -579,28 +330,10 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_rtc_ex.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_sai.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_sai_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_sd.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_sdram.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_smartcard.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_smartcard_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_smbus.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_spdifrx.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_spi.c">
@@ -612,85 +345,16 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_tim.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_timebase_rtc_alarm_template.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_timebase_rtc_wakeup_template.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_timebase_tim_template.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_tim_ex.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_uart.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_usart.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_wwdg.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_adc.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_crc.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_dac.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_dma.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_dma2d.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_exti.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_fmc.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_gpio.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_i2c.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_lptim.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_pwr.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_rcc.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_rng.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_rtc.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_sdmmc.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_spi.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_tim.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_usart.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_usb.c">
-      <Filter>drv\HAL\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_utils.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
