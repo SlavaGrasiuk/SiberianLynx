@@ -218,7 +218,6 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_usb.c" />
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\InitCPU.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\Reset.cpp" />
     <ClCompile Include="..\..\..\..\src\core\UserAppProc.cpp" />
   </ItemGroup>
