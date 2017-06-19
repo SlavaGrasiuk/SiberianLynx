@@ -1,6 +1,8 @@
 temp/
 bin/
 lib/
+build/VS2015/tests/InitTest/VisualGDB/VisualGDBCache/InitTest-Release/*
+build/VS2015/tests/InitTest/VisualGDB/VisualGDBCache/InitTest-Debug/*
 build/VS2015/.vs
 build/VS2015/*.db
 build/VS2015/*.opendb

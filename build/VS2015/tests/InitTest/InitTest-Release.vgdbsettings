@@ -125,6 +125,17 @@
         <WorkingDirectory>$(BuildDir)</WorkingDirectory>
         <Environment>
           <Records />
+          <EnvironmentSetupFiles />
+        </Environment>
+        <BackgroundMode>false</BackgroundMode>
+      </CustomActionBase>
+      <CustomActionBase xsi:type="CommandLineAction">
+        <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+        <Command>$(TOOLCHAIN_ROOT)\bin\arm-none-eabi-size.exe</Command>
+        <Arguments>--format=sysv --radix=10 $(TargetPath)</Arguments>
+        <WorkingDirectory>$(BuildDir)</WorkingDirectory>
+        <Environment>
+          <Records />
         </Environment>
         <BackgroundMode>false</BackgroundMode>
       </CustomActionBase>

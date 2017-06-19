@@ -2,7 +2,7 @@
 #include "commdef.hpp"
 
 
-static UserApp g_userApp;
+UserApp g_userApp;
 
 
 int main(int argc, char **argv);

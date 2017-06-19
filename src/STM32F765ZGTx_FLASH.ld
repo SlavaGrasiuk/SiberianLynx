@@ -63,6 +63,8 @@ MEMORY {
 	RAM (xrw)	: ORIGIN = 0x20000000,	LENGTH = 512K
 }
 
+EXTERN(g_userApp)
+
 /* Define output sections */
 SECTIONS
 {

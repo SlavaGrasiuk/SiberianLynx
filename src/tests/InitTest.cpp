@@ -6,7 +6,7 @@ main
 */
 int main() {
 
-	while (1);
+	__asm("nop");
 
 	return 0;
 }
