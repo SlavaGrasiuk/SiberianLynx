@@ -3,4 +3,4 @@
 :: 3rd arg	- output file name
 :: 4rd arg	- output file name without extension
 
-%1\arm-none-eabi-objdump.exe -dC %2\%3 > %2\%4.lss
+%1\bin\arm-none-eabi-objdump.exe -DC %2\%3 > %2\%4.lss

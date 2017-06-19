@@ -358,5 +358,6 @@
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\UserAppProc.cpp" />
   </ItemGroup>
 </Project>

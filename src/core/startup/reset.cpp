@@ -3,7 +3,7 @@
 #define WEAK_ISR	[[gnu::weak, gnu::alias("_ZL15Default_Handlerv")]]		//mangled name for Default_Handler
 
 static void Default_Handler();
-[[noreturn]] static void Reset_Handler();
+MANGOFF [[noreturn]] void Reset_Handler();
 MANGOFF void __libc_init_array();
 
 namespace core {
@@ -52,7 +52,7 @@ using intfunc = void(*)();
 Reset_Handler
 ==================
 */
-static void Reset_Handler() {
+void Reset_Handler() {
 	extern unsigned int _sidata, _sdata, _edata, _sbss, _ebss;		//defined in linker script
 	auto pulSrc = &_sidata;
 
@@ -72,6 +72,17 @@ static void Reset_Handler() {
 	__libc_init_array();
 
 	core::Main();
+}
+
+/*
+==================
+_init
+
+	__libc_init_array callback
+==================
+*/
+MANGOFF void _init() {
+
 }
 
 /*
