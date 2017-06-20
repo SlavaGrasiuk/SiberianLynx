@@ -7,9 +7,6 @@ namespace core {
 	[[noreturn]] void Main();
 }
 
-uint32_t SystemCoreClock = 16'000'000;
-const uint8_t AHBPrescTable[16] = { 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9 };
-const uint8_t APBPrescTable[8] = { 0, 0, 0, 0, 1, 2, 3, 4 };
 
 /*
 ==================
@@ -50,14 +47,55 @@ template<> void BackLightCtrl::exec() {
 
 /*
 ==================
+__cxa_pure_virtual
+==================
+*/
+MANGOFF void __cxa_pure_virtual() {
+	EXCEPT_HNDL()
+}
+
+/*
+==================
 abort
 ==================
 */
 MANGOFF void abort() {
-	if constexpr (g_debug) {
-		__asm("bkpt #0");
-	} else {
-		while (true);
-	}
+	EXCEPT_HNDL()
 	__builtin_unreachable();
+}
+
+/*
+==================
+HardFault_Handler
+==================
+*/
+MANGOFF void HardFault_Handler() {
+	EXCEPT_HNDL()
+}
+
+/*
+==================
+MemManage_Handler
+==================
+*/
+MANGOFF void MemManage_Handler() {
+	EXCEPT_HNDL()
+}
+
+/*
+==================
+BusFault_Handler
+==================
+*/
+MANGOFF void BusFault_Handler() {
+	EXCEPT_HNDL()
+}
+
+/*
+==================
+UsageFault_Handler
+==================
+*/
+MANGOFF void UsageFault_Handler() {
+	EXCEPT_HNDL()
 }

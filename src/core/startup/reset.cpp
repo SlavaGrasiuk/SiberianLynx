@@ -1,8 +1,8 @@
 #include <commdef.hpp>
 
-#define WEAK_ISR	[[gnu::weak, gnu::alias("_ZL15Default_Handlerv")]]		//mangled name for Default_Handler
+#define WEAK_ISR	[[gnu::weak, gnu::alias("Default_Handler")]]
 
-static void Default_Handler();
+MANGOFF void Default_Handler();
 MANGOFF [[noreturn]] void Reset_Handler();
 MANGOFF void __libc_init_array();
 
@@ -68,8 +68,6 @@ void Reset_Handler() {
 		*(pulDest++) = 0;
 	}
 
-	core::InitCPU();
-
 	/* Call global constructors from .init_array and .preinit_array sections */
 	__libc_init_array();
 
@@ -84,7 +82,7 @@ _init
 ==================
 */
 MANGOFF void _init() {
-
+	core::InitCPU();
 }
 
 #pragma region DevVectors
@@ -320,10 +318,6 @@ static_assert(sizeof g_devVectors / sizeof(*g_devVectors) == 110, "Invalid size 
 Default_Handler
 ==================
 */
-static void Default_Handler() {
-	if constexpr (g_debug) {
-		__asm("bkpt #0");
-	} else {
-		while (true);
-	}
+void Default_Handler() {
+	EXCEPT_HNDL()
 }
