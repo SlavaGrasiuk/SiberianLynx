@@ -25,4 +25,12 @@
       <Filter>VisualGDB settings</Filter>
     </Xml>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
+  </ItemGroup>
 </Project>

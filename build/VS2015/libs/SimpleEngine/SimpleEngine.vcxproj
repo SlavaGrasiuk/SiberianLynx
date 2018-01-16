@@ -187,6 +187,14 @@
   <ItemGroup>
     <Xml Include="MCU.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
