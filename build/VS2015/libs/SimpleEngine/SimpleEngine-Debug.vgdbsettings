@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <VisualGDBProjectSettings2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ConfigurationName>Release</ConfigurationName>
+  <ConfigurationName>Debug</ConfigurationName>
   <Project xsi:type="com.visualgdb.project.embedded">
     <CustomSourceDirectories>
       <Directories />
@@ -10,7 +10,7 @@
     <EmbeddedProfileFile>MCU.xml</EmbeddedProfileFile>
   </Project>
   <Build xsi:type="com.visualgdb.build.msbuild">
-    <ProjectFile>core.vcxproj</ProjectFile>
+    <ProjectFile>SimpleEngine.vcxproj</ProjectFile>
     <ParallelJobCount>0</ParallelJobCount>
   </Build>
   <Debug xsi:type="com.visualgdb.debug.embedded">
@@ -71,7 +71,6 @@
     <ShowMessageAfterExecuting>true</ShowMessageAfterExecuting>
   </CustomShortcuts>
   <UserDefinedVariables />
-  <ImportedPropertySheets />
   <CodeSense>
     <Enabled>Unknown</Enabled>
     <ExtraSettings>

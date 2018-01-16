@@ -1,7 +1,7 @@
 
-#define WEAK_ISR	[[gnu::weak, gnu::alias("_ZL19Default_Handler_Devv")]]
+#define WEAK_ISR	[[using gnu: weak, alias("Default_Handler_Dev")]]
 
-static void Default_Handler_Dev();
+extern "C" void Default_Handler_Dev();
 
 /* STM32F765ZG interrupt vectors */
 extern "C" {
@@ -114,7 +114,7 @@ extern "C" {
 
 using intfunc = void(*)();
 
-[[gnu::used, gnu::section(".isr_vector_dev")]] static const intfunc g_devVectors[] = {
+[[using gnu: used, section(".isr_vector_dev")]] const intfunc g_devVectors[] = {
 	WWDG_IRQHandler,
 	PVD_IRQHandler,
 	TAMP_STAMP_IRQHandler,
@@ -234,7 +234,7 @@ using intfunc = void(*)();
 Default_Handler_Dev
 ==================
 */
-static void Default_Handler_Dev() {
+void Default_Handler_Dev() {
 	if constexpr (g_debug) {
 		__asm("bkpt #0");
 	} else {

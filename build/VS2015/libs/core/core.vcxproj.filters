@@ -243,12 +243,6 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc\os_target.cpp">
       <Filter>scmRTOS\port\cortex\mx-gcc</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\core\startup\InitCPU.cpp">
-      <Filter>startup</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\core\startup\Reset.cpp">
-      <Filter>startup</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal.c">
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
@@ -356,5 +350,14 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
     <ClCompile Include="..\..\..\..\src\core\UserAppProc.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\startup\reset.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\initcpu.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

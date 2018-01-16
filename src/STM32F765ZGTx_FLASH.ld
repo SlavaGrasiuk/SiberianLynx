@@ -51,11 +51,14 @@
 /* Entry Point */
 ENTRY(Reset_Handler)
 
+EXTERN(Default_Handler_Dev, g_userApp)
+
 /* Highest address of the user mode stack */
-_estack = 0x20080000;    /* end of RAM */
+_estack = 0x20080000;		/* end of RAM */
+
 /* Generate a link error if heap and stack don't fit into RAM */
-_Min_Heap_Size = 0x200;      /* required amount of heap  */
-_Min_Stack_Size = 0x400; /* required amount of stack */
+_Min_Heap_Size = 0;			/* required amount of heap  */
+_Min_Stack_Size = 2048;		/* required amount of stack */
 
 /* Specify the memory areas */
 MEMORY {
@@ -63,11 +66,8 @@ MEMORY {
 	RAM (xrw)	: ORIGIN = 0x20000000,	LENGTH = 512K
 }
 
-EXTERN(g_userApp)
-
 /* Define output sections */
-SECTIONS
-{
+SECTIONS {
   /* The startup code goes first into FLASH */
   .isr_vector :
   {

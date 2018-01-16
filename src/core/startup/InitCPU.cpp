@@ -18,6 +18,9 @@ core::InitCPU
 ==================
 */
 void core::InitCPU() {
+	//Enable Bus Fault, Memory Fault, Usage Fault exceptions
+	SCB->SHCSR |= (SCB_SHCSR_BUSFAULTENA_Msk | SCB_SHCSR_MEMFAULTENA_Msk | SCB_SHCSR_USGFAULTENA_Msk);
+
 	// Enable FPU
 #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
 	SCB->CPACR |= ((3UL << 10 * 2) | (3UL << 11 * 2));  // set CP10 and CP11 Full Access
