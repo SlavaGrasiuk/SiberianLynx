@@ -64,6 +64,7 @@
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IncludePath>..\..\..\..\..\game-libs-msvc\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.2.0</Toolchain>
@@ -78,6 +79,7 @@
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IncludePath>..\..\..\..\..\game-libs-msvc\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ToolchainSettingsContainer>
