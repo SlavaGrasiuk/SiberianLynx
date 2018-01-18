@@ -28,9 +28,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Interfaces.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\BaseGameLogic.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
   </ItemGroup>
 </Project>

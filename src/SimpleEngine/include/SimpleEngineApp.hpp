@@ -2,7 +2,9 @@
 
 class BaseGameLogic;
 class EventManager;
+class Renderer2D;
 struct SDL_Window;
+union SDL_Event;
 
 /*
 ===============================================================================
@@ -18,9 +20,14 @@ struct SDL_Window;
 */
 class SimpleEngineApp {
 	BaseGameLogic *m_game;
-	SDL_Window *m_window;
 	EventManager *m_eventManager;
-	bool m_isRunning;
+	Renderer2D *m_renderer;
+
+	SDL_Window *m_window;
+
+	bool m_isRunning, m_quiting;
+	int m_windowW, m_windowH;
+	int m_exitCode;
 
 public:
 	SimpleEngineApp();
@@ -33,10 +40,9 @@ public:
 	int GetExitCode() const;
 
 private:
-	void OnMessage();
+	void OnMessage(const SDL_Event * const msg);
 	void OnUpdate(const float deltaTimeMs);
 	void OnRender(const float deltaTimeMs);
-	void OnQuit();
 	void RegisterEngineEvents();
 	void LoadWindowIcon();
 

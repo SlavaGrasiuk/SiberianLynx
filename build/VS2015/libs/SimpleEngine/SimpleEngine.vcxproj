@@ -190,10 +190,13 @@
     <Xml Include="MCU.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\BaseGameLogic.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Interfaces.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 #include "include\SimpleEngineApp.hpp"
+#include "include\BaseGameLogic.hpp"
 #include <SDL2\SDL.h>
 #include <chrono>
 #ifdef _WIN32
@@ -9,12 +10,18 @@
 SimpleEngineApp *g_app;
 
 
+#define SAFE_DELETE(ptr)	\
+	if(ptr) {				\
+		delete ptr;			\
+		ptr = nullptr;		\
+	}
+
 /*
 ==================
 SimpleEngineApp::SimpleEngineApp
 ==================
 */
-SimpleEngineApp::SimpleEngineApp(): m_game(nullptr), m_eventManager(nullptr), m_isRunning(false) {
+SimpleEngineApp::SimpleEngineApp(): m_game(nullptr), m_eventManager(nullptr), m_isRunning(false), m_quiting(false), m_exitCode(1) {
 	g_app = this;
 }
 
@@ -30,7 +37,7 @@ bool SimpleEngineApp::Init(int argc, char ** argv, const int screenW, const int 
 	RegisterEngineEvents();
 	RegisterGameEvents();
 
-	//NOTE here we can initialize resource cache, strings and scripting
+	//NOTE here we can initialize resource cache, strings, scripting and event system
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		return false;
@@ -40,10 +47,11 @@ bool SimpleEngineApp::Init(int argc, char ** argv, const int screenW, const int 
 	if (m_window == nullptr) {
 		return false;
 	}
-
+	
+	SDL_GetWindowSize(m_window, &m_windowW, &m_windowH);		//Window can have size less than requested one.
 	LoadWindowIcon();
 
-	//NOTE create and initialize render here
+	//NOTE create and initialize renderer here
 
 	m_game = CreateGameAndView();
 	if (m_game == nullptr) {
@@ -120,21 +128,30 @@ SimpleEngineApp::MainLoop
 
 	SimpleEngine make use of the following convention: 
 		- events, pumped from operating system are called "messages"
-		- events, processed by engine's EvemtManager are called "events"
+		- events, processed by engine's EventManager are called "events"
 
 	This function works with the operating system's message pump.
 ==================
 */
 void SimpleEngineApp::MainLoop() {
+	using namespace std::chrono;
+
 	SDL_Event msg;
+	float frameTimeMs = 1.0f / 60.0f;
+	decltype(high_resolution_clock::now()) prevFrameEndTimePoint;
 
 	while (msg.type != SDL_QUIT) {
 		const bool gotMsg = SDL_PollEvent(&msg);
 
 		if (gotMsg) {
-
+			OnMessage(&msg);
 		} else {
+			OnUpdate(frameTimeMs);
+			OnRender(frameTimeMs);
 
+			const auto thisFrameEndTimePoint = high_resolution_clock::now();
+			frameTimeMs = duration<float, std::milli>(thisFrameEndTimePoint - prevFrameEndTimePoint).count();
+			prevFrameEndTimePoint = thisFrameEndTimePoint;
 		}
 	}
 }
@@ -145,7 +162,14 @@ SimpleEngineApp::Shutdown
 ==================
 */
 void SimpleEngineApp::Shutdown() {
+	SAFE_DELETE(m_game)
 
+	SAFE_DELETE(m_eventManager)
+
+	//SAFE_DELETE(m_renderer)
+
+	SDL_DestroyWindow(m_window);
+	SDL_Quit();
 }
 
 /*
@@ -163,7 +187,7 @@ SimpleEngineApp::GetExitCode
 ==================
 */
 int SimpleEngineApp::GetExitCode() const {
-	return 0;
+	return m_exitCode;
 }
 
 /*
@@ -171,8 +195,31 @@ int SimpleEngineApp::GetExitCode() const {
 SimpleEngineApp::OnMessage
 ==================
 */
-void SimpleEngineApp::OnMessage() {
+void SimpleEngineApp::OnMessage(const SDL_Event * const msg) {
+	switch (msg->type) {
+		case SDL_MOUSEBUTTONDOWN:
+		case SDL_MOUSEBUTTONUP:
+		case SDL_MOUSEMOTION:
+		case SDL_KEYDOWN:
+		case SDL_KEYUP:
+		case SDL_FINGERDOWN:
+		case SDL_FINGERUP:
+		case SDL_FINGERMOTION:
+			{
+				if (m_game) {
+					//SDL2 has already converted messages into the platform-independent format.
 
+					//Send message to the game views in the reverse order.
+					for () {
+
+					}
+				}
+			}
+			break;
+
+		default:
+			break;
+	}
 }
 
 /*
@@ -181,7 +228,18 @@ SimpleEngineApp::OnUpdate
 ==================
 */
 void SimpleEngineApp::OnUpdate(const float deltaTimeMs) {
+	if (m_quiting) {
+		SDL_Event msg;
+		msg.type = SDL_QUIT;
+		SDL_PushEvent(&msg);
+		m_exitCode = 0;
+	}
 
+	if (m_game) {
+		//Update EventManager
+
+		m_game->OnUpdate(deltaTimeMs);
+	}
 }
 
 /*
@@ -190,16 +248,11 @@ SimpleEngineApp::OnRender
 ==================
 */
 void SimpleEngineApp::OnRender(const float deltaTimeMs) {
+	//Iterate trough game's views and call OnRender on each of them.
 
-}
+	//Call RenderDiagnostic on game.
 
-/*
-==================
-SimpleEngineApp::OnQuit
-==================
-*/
-void SimpleEngineApp::OnQuit() {
-
+	//Call PresentScene on renderer. Execution will be locket until vsync.
 }
 
 /*
