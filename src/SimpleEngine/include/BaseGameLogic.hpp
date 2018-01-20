@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Interfaces.hpp"
+#include <list>
 
 enum class BaseGameState {
 	Invalid,
@@ -11,6 +12,8 @@ enum class BaseGameState {
 	Running
 };
 
+using GameViewList = std::list<std::shared_ptr<IGameView>>;
+
 /*
 ===============================================================================
 
@@ -19,14 +22,19 @@ enum class BaseGameState {
 ===============================================================================
 */
 class BaseGameLogic: public IGameLogic {
+	GameViewList m_gameViews;
+	BaseGameState m_state;
 
 public:
 	BaseGameLogic();
 	~BaseGameLogic();
 
-	virtual WeakActorPtr GetActor(const ActorId id);
-	virtual void DestroyActor(const ActorId actorId);
-	virtual void OnUpdate(const float deltaTimeMs);
-	virtual void ChangeState(BaseGameState newState);
-};
+	virtual WeakActorPtr GetActor(const ActorId id) override;
+	virtual void DestroyActor(const ActorId actorId) override;
+	virtual void OnUpdate(const float deltaTimeMs) override;
+	virtual void ChangeState(BaseGameState newState) override;
 
+	GameViewList &GetGameViewList();
+
+	virtual void RenderDiagnostic();
+};

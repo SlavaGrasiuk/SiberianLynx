@@ -2,6 +2,7 @@
 #include "include\BaseGameLogic.hpp"
 #include <SDL2\SDL.h>
 #include <chrono>
+#include <cstring>
 #ifdef _WIN32
 #include <Windows.h>
 #endif
@@ -137,15 +138,16 @@ void SimpleEngineApp::MainLoop() {
 	using namespace std::chrono;
 
 	SDL_Event msg;
+	memset(&msg, 0, sizeof msg);
 	float frameTimeMs = 1.0f / 60.0f;
 	decltype(high_resolution_clock::now()) prevFrameEndTimePoint;
 
 	while (msg.type != SDL_QUIT) {
-		const bool gotMsg = SDL_PollEvent(&msg);
+		const bool gotMsg = SDL_PollEvent(&msg);	// Use SDL_PollEvent() so we can use idle time to render the scene. 
 
 		if (gotMsg) {
 			OnMessage(&msg);
-		} else {
+		} else {					// Update and render a frame during idle time (no messages are waiting)
 			OnUpdate(frameTimeMs);
 			OnRender(frameTimeMs);
 
@@ -210,8 +212,10 @@ void SimpleEngineApp::OnMessage(const SDL_Event * const msg) {
 					//SDL2 has already converted messages into the platform-independent format.
 
 					//Send message to the game views in the reverse order.
-					for () {
-
+					for (auto it = m_game->GetGameViewList().rbegin(); it != m_game->GetGameViewList().rend(); it++) {
+						if ((*it)->OnMsgProc(msg)) {
+							break;		// break from for loop
+						}
 					}
 				}
 			}
@@ -248,9 +252,11 @@ SimpleEngineApp::OnRender
 ==================
 */
 void SimpleEngineApp::OnRender(const float deltaTimeMs) {
-	//Iterate trough game's views and call OnRender on each of them.
+	for (auto &view : m_game->GetGameViewList()) {
+		view->VOnRender(deltaTimeMs);
+	}
 
-	//Call RenderDiagnostic on game.
+	m_game->RenderDiagnostic();
 
 	//Call PresentScene on renderer. Execution will be locket until vsync.
 }

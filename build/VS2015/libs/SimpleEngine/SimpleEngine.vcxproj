@@ -126,7 +126,7 @@
       <ARMCPU>cortex-m7</ARMCPU>
     </ToolchainSettingsContainer>
     <ClCompile>
-      <Optimization>O2</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <CLanguageStandard>C11</CLanguageStandard>
       <CPPLanguageStandard>CPP14</CPPLanguageStandard>
     </ClCompile>
@@ -176,7 +176,7 @@
       <ARMCPU>cortex-m7</ARMCPU>
     </ToolchainSettingsContainer>
     <ClCompile>
-      <Optimization>Og</Optimization>
+      <Optimization>Disabled</Optimization>
       <CLanguageStandard>C11</CLanguageStandard>
       <CPPLanguageStandard>CPP14</CPPLanguageStandard>
     </ClCompile>
