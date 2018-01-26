@@ -38,6 +38,7 @@ public:
 	void Shutdown();
 	SDL_Window *GetWindow() const;
 	int GetExitCode() const;
+	void AbortGame(const int exitCode = 1);
 
 private:
 	void OnMessage(const SDL_Event * const msg);

@@ -191,12 +191,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\BaseGameLogic.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\Event.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\EventManager.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Interfaces.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
   </ItemGroup>

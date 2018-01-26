@@ -8,6 +8,9 @@
     <Filter Include="VisualGDB settings\Device-specific files">
       <UniqueIdentifier>{a977b07d-4155-46de-900d-0ebf59ab67d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EventManager">
+      <UniqueIdentifier>{a0f32cb0-a8f5-4211-9fad-c5a76649d6f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="SimpleEngine-Debug.vgdbsettings">
@@ -30,10 +33,19 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Interfaces.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\BaseGameLogic.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\EventManager.hpp">
+      <Filter>EventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\Event.hpp">
+      <Filter>EventManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager.cpp">
+      <Filter>EventManager</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

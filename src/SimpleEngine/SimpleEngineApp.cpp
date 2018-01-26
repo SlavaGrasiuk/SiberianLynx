@@ -194,6 +194,16 @@ int SimpleEngineApp::GetExitCode() const {
 
 /*
 ==================
+SimpleEngineApp::AbortGame
+==================
+*/
+void SimpleEngineApp::AbortGame(const int exitCode) {
+	m_exitCode = exitCode;
+	m_quiting = true;
+}
+
+/*
+==================
 SimpleEngineApp::OnMessage
 ==================
 */
@@ -236,7 +246,6 @@ void SimpleEngineApp::OnUpdate(const float deltaTimeMs) {
 		SDL_Event msg;
 		msg.type = SDL_QUIT;
 		SDL_PushEvent(&msg);
-		m_exitCode = 0;
 	}
 
 	if (m_game) {
