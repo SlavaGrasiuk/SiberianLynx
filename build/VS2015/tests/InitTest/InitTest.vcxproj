@@ -50,7 +50,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.2.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
   </PropertyGroup>
@@ -61,7 +61,7 @@
     <OutDir>..\..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.2.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
   </PropertyGroup>
@@ -242,7 +242,6 @@
   <ItemGroup>
     <None Include="InitTest-Debug.vgdbsettings" />
     <None Include="InitTest-Release.vgdbsettings" />
-    <None Include="mcu.props" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="MCU.xml" />

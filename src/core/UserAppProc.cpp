@@ -20,4 +20,5 @@ template<> void UserApp::exec() {
 	main(0, nullptr);
 
 	OS::sleep();
+	__builtin_unreachable();
 }
