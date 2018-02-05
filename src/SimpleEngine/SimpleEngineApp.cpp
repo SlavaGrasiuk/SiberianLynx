@@ -1,5 +1,6 @@
 #include "include\SimpleEngineApp.hpp"
 #include "include\BaseGameLogic.hpp"
+#include "EventManager\EventManager_local.hpp"
 #include <SDL2\SDL.h>
 #include <chrono>
 #include <cstring>
@@ -38,7 +39,12 @@ bool SimpleEngineApp::Init(int argc, char ** argv, const int screenW, const int 
 	RegisterEngineEvents();
 	RegisterGameEvents();
 
-	//NOTE here we can initialize resource cache, strings, scripting and event system
+	//NOTE here we can initialize resource cache, strings and scripting
+
+	m_eventManager = new EventManager;
+	if (m_eventManager == nullptr) {
+		return false;
+	}
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		return false;
@@ -204,6 +210,15 @@ void SimpleEngineApp::AbortGame(const int exitCode) {
 
 /*
 ==================
+SimpleEngineApp::GetEventManager
+==================
+*/
+IEventManager *SimpleEngineApp::GetEventManager() const {
+	return m_eventManager;
+}
+
+/*
+==================
 SimpleEngineApp::OnMessage
 ==================
 */
@@ -249,7 +264,7 @@ void SimpleEngineApp::OnUpdate(const float deltaTimeMs) {
 	}
 
 	if (m_game) {
-		//Update EventManager
+		m_eventManager->Update(20.0f);
 
 		m_game->OnUpdate(deltaTimeMs);
 	}

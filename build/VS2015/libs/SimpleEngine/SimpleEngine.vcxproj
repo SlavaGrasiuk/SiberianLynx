@@ -64,7 +64,7 @@
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
-    <IncludePath>..\..\..\..\..\game-libs-msvc\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\..\src\3rdParty\CppDelegates;..\..\..\..\..\game-libs-msvc\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
@@ -79,7 +79,7 @@
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
-    <IncludePath>..\..\..\..\..\game-libs-msvc\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\..\src\3rdParty\CppDelegates;..\..\..\..\..\game-libs-msvc\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ToolchainSettingsContainer>
@@ -119,6 +119,8 @@
       <Optimization>O2</Optimization>
       <CLanguageStandard>C11</CLanguageStandard>
       <CPPLanguageStandard>CPP14</CPPLanguageStandard>
+      <SupportRTTI>true</SupportRTTI>
+      <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\CppDelegates;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -169,6 +171,8 @@
       <Optimization>Og</Optimization>
       <CLanguageStandard>C11</CLanguageStandard>
       <CPPLanguageStandard>CPP14</CPPLanguageStandard>
+      <SupportRTTI>true</SupportRTTI>
+      <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\CppDelegates;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -189,6 +193,7 @@
     <Xml Include="MCU.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager_local.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\BaseGameLogic.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\Event.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\EventManager.hpp" />

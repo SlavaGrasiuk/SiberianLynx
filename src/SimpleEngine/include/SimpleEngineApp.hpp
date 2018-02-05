@@ -1,7 +1,8 @@
 #pragma once
 
+#include "EventManager\EventManager.hpp"
+
 class BaseGameLogic;
-class EventManager;
 class Renderer2D;
 struct SDL_Window;
 union SDL_Event;
@@ -20,7 +21,7 @@ union SDL_Event;
 */
 class SimpleEngineApp {
 	BaseGameLogic *m_game;
-	EventManager *m_eventManager;
+	IEventManager *m_eventManager;
 	Renderer2D *m_renderer;
 
 	SDL_Window *m_window;
@@ -39,6 +40,7 @@ public:
 	SDL_Window *GetWindow() const;
 	int GetExitCode() const;
 	void AbortGame(const int exitCode = 1);
+	IEventManager *GetEventManager() const;
 
 private:
 	void OnMessage(const SDL_Event * const msg);

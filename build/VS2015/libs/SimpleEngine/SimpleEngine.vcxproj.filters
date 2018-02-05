@@ -36,6 +36,9 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\Event.hpp">
       <Filter>EventManager</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager_local.hpp">
+      <Filter>EventManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
