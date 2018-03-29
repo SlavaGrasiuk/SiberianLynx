@@ -11,6 +11,9 @@
     <Filter Include="EventManager">
       <UniqueIdentifier>{a0f32cb0-a8f5-4211-9fad-c5a76649d6f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MainLoop">
+      <UniqueIdentifier>{8de460da-8924-40f6-8a19-d727ef933e1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="SimpleEngine-Debug.vgdbsettings">
@@ -39,6 +42,12 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager_local.hpp">
       <Filter>EventManager</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\Process.hpp">
+      <Filter>MainLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\ProcessManager.hpp">
+      <Filter>MainLoop</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
@@ -46,6 +55,12 @@
     <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager.cpp">
       <Filter>EventManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\Process.cpp">
+      <Filter>MainLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\ProcessManager.cpp">
+      <Filter>MainLoop</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

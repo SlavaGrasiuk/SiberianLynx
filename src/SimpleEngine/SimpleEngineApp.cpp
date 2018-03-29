@@ -146,7 +146,7 @@ void SimpleEngineApp::MainLoop() {
 	SDL_Event msg;
 	memset(&msg, 0, sizeof msg);
 	float frameTimeMs = 1.0f / 60.0f;
-	decltype(high_resolution_clock::now()) prevFrameEndTimePoint;
+	auto prevFrameEndTimePoint = high_resolution_clock::now();
 
 	while (msg.type != SDL_QUIT) {
 		const bool gotMsg = SDL_PollEvent(&msg);	// Use SDL_PollEvent() so we can use idle time to render the scene. 

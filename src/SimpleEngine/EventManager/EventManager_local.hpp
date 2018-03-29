@@ -8,7 +8,7 @@
 ===============================================================================
 
 		SimpleEngine's event manager. For each registered event type it manages
-	list of delegates, called when the event of this type is recieved. 
+	list of the delegates, called when the event of this type is recieved. 
 
 		
 

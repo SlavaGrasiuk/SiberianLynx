@@ -132,20 +132,17 @@ bool EventManager::Update(const float maxMs) {
 		endTimePoint = high_resolution_clock::now() + durationMs(maxMs);
 	}
 
-	const int queueToProcess = m_activeQueue;
+	auto &queueToProcess = m_eventQueues[m_activeQueue];
 	m_activeQueue = (m_activeQueue + 1) % queuesNum;
 	m_eventQueues[m_activeQueue].clear();
-	auto &eventQueue = m_eventQueues[queueToProcess];
 
-	while (!eventQueue.empty()) {
-		auto eventPtr = eventQueue.front();
-		eventQueue.pop_front();
+	while (!queueToProcess.empty()) {
+		auto eventPtr = queueToProcess.front();
+		queueToProcess.pop_front();
 
 		const auto findIt = m_eventListeners.find(eventPtr->GetType());
 		if (findIt != m_eventListeners.end()) {
-			const auto &listeners = findIt->second;
-
-			for (const auto &delegate : listeners) {
+			for (const auto &delegate : findIt->second) {
 				delegate(eventPtr);
 			}
 		}
@@ -158,11 +155,11 @@ bool EventManager::Update(const float maxMs) {
 		}
 	}
 
-	const bool queueFlushed = eventQueue.empty();
+	const bool queueFlushed = queueToProcess.empty();
 	if (!queueFlushed) {
-		while (!eventQueue.empty()) {
-			auto eventPtr = eventQueue.back();
-			eventQueue.pop_back();
+		while (!queueToProcess.empty()) {
+			auto eventPtr = queueToProcess.back();
+			queueToProcess.pop_back();
 			m_eventQueues[m_activeQueue].push_front(eventPtr);
 		}
 	}

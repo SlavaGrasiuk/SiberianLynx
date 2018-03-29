@@ -198,12 +198,19 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\Event.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\EventManager.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Interfaces.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\Process.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\ProcessManager.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
-    <ClCompile Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\EventManager\EventManager.cpp">
+      <GenerateAssemblyOutput Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">false</GenerateAssemblyOutput>
+      <GenerateAssemblyOutput Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">false</GenerateAssemblyOutput>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\Process.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\ProcessManager.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
   </ItemGroup>
