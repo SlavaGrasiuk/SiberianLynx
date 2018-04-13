@@ -7,7 +7,7 @@
 BaseGameLogic::BaseGameLogic
 ==================
 */
-BaseGameLogic::BaseGameLogic() : m_state(BaseGameState::Initializing) {
+BaseGameLogic::BaseGameLogic() : m_state(BaseGameState::Initializing), m_processManager(new ProcessManager) {
 
 }
 
@@ -17,6 +17,10 @@ BaseGameLogic::~BaseGameLogic
 ==================
 */
 BaseGameLogic::~BaseGameLogic() {
+	while (!m_gameViews.empty()) {
+		m_gameViews.pop_front();
+	}
+	delete m_processManager;
 
 }
 
@@ -58,7 +62,7 @@ void BaseGameLogic::OnUpdate(const float deltaTimeMs) {
 			break;
 
 		case BaseGameState::Running:
-			//update process manager
+			m_processManager->UpdateProcesses(deltaTimeMs);
 
 			//update game physics
 			break;
