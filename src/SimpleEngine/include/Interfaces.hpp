@@ -36,3 +36,34 @@ public:
 	virtual void VOnUpdate(const float deltaTimeMs) = 0;
 	virtual ~IGameView() {};
 };
+
+
+
+class Resource;
+class IResourceFile;
+class ResHandle;
+
+//interface to file-specific loaders
+class IResourceLoader {
+public:
+	virtual std::string VGetPattern() = 0;
+	virtual bool VUseRawFile() = 0;
+	virtual bool VDiscardRawBufferAfterLoad() = 0;
+	virtual bool VAddNullZero() {
+		return false;
+	}
+	virtual unsigned int VGetLoadedResourceSize(char *rawBuffer, unsigned int rawSize) = 0;
+	virtual bool VLoadResource(char *rawBuffer, unsigned int rawSize, std::shared_ptr<ResHandle> handle) = 0;
+};
+
+
+class IResourceFile {
+public:
+	virtual bool Open() = 0;
+	virtual int GetRawResourceSize(const std::string &r) = 0;
+	virtual std::unique_ptr<uint8_t[]> GetRawResource(const std::string &r) = 0;
+	virtual int GetNumResources() const = 0;
+	virtual std::string GetResourceName(int num) const = 0;
+	virtual ~IResourceFile() {}
+};
+

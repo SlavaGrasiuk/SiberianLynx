@@ -14,6 +14,9 @@
     <Filter Include="MainLoop">
       <UniqueIdentifier>{8de460da-8924-40f6-8a19-d727ef933e1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{1d4e1bff-6b44-4bf9-b5a5-d43c82513d8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="SimpleEngine-Debug.vgdbsettings">
@@ -48,6 +51,12 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\ProcessManager.hpp">
       <Filter>MainLoop</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.hpp">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.hpp">
+      <Filter>Resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
@@ -61,6 +70,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\ProcessManager.cpp">
       <Filter>MainLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.cpp">
+      <Filter>Resource</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

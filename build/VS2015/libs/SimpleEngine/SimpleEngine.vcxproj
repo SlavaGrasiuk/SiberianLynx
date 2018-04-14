@@ -202,6 +202,8 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\ProcessManager.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
@@ -211,6 +213,8 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\Process.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\ProcessManager.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
   </ItemGroup>
