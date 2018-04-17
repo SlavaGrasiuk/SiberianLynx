@@ -34,7 +34,7 @@ public:
 	virtual void OnAttach(GameViewId vid, ActorId aid) = 0;
 	virtual bool OnMsgProc(const SDL_Event * const msg) = 0;
 	virtual void VOnUpdate(const float deltaTimeMs) = 0;
-	virtual ~IGameView() {};
+	virtual ~IGameView() = default;
 };
 
 
@@ -46,16 +46,15 @@ class ResHandle;
 //interface to file-specific loaders
 class IResourceLoader {
 public:
-	virtual std::string VGetPattern() = 0;
-	virtual bool VUseRawFile() = 0;
-	virtual bool VDiscardRawBufferAfterLoad() = 0;
-	virtual bool VAddNullZero() {
+	virtual std::string GetPattern() = 0;
+	virtual bool UseRawFile() = 0;
+	virtual bool DiscardRawBufferAfterLoad() = 0;
+	virtual bool AddNullZero() {
 		return false;
 	}
-	virtual unsigned int VGetLoadedResourceSize(char *rawBuffer, unsigned int rawSize) = 0;
-	virtual bool VLoadResource(char *rawBuffer, unsigned int rawSize, std::shared_ptr<ResHandle> handle) = 0;
+	virtual unsigned int GetLoadedResourceSize(char *rawBuffer, unsigned int rawSize) = 0;
+	virtual bool LoadResource(char *rawBuffer, unsigned int rawSize, std::shared_ptr<ResHandle> handle) = 0;
 };
-
 
 class IResourceFile {
 public:
@@ -66,4 +65,3 @@ public:
 	virtual std::string GetResourceName(int num) const = 0;
 	virtual ~IResourceFile() {}
 };
-

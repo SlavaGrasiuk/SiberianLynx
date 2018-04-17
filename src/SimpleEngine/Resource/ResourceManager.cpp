@@ -1,5 +1,6 @@
 #include "ResourceManager.hpp"
 #include "ZipFile.hpp"
+#include "../Utilities/String.hpp"
 
 
 /*

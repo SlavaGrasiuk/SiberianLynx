@@ -204,6 +204,7 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\Utilities\String.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\BaseGameLogic.cpp" />
@@ -217,6 +218,7 @@
     <ClCompile Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Utilities\String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
