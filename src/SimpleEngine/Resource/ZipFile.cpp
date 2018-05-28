@@ -131,7 +131,7 @@ bool ZipFile::Init(const std::string &resFileName) {
 	fseek(m_pFile, dhOffset - dh.dirSize, SEEK_SET);
 
 	// Allocate the data buffer, and read the whole thing.
-	m_pDirData = new char[dh.dirSize + dh.nDirEntries * sizeof(*m_papDir)];
+	m_pDirData = new(std::nothrow) char[dh.dirSize + dh.nDirEntries * sizeof(*m_papDir)];
 	if (!m_pDirData) {
 		return false;
 	}
@@ -293,7 +293,7 @@ bool ZipFile::ReadFile(int i, void *pBuf) {
 	}
 
 	// Alloc compressed data buffer and read the whole stream
-	char *pcData = new char[h.cSize];
+	char *pcData = new(std::nothrow) char[h.cSize];
 	if (!pcData) {
 		return false;
 	}

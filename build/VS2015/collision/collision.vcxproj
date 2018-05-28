@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3F330730-9DD8-4F5B-99D3-EF5E88D99AED}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+    <GenerateHexFile>true</GenerateHexFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+    <GenerateHexFile>true</GenerateHexFile>
+    <PlatformToolset>v140</PlatformToolset>
+    <ConfigurationType>Application</ConfigurationType>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+    <GenerateHexFile>true</GenerateHexFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+    <GenerateHexFile>true</GenerateHexFile>
+    <PlatformToolset>v140</PlatformToolset>
+    <ConfigurationType>Application</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <OutDir>..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetExt>.elf</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <OutDir>..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetExt>.exe</TargetExt>
+    <LibraryPath>..\..\..\lib\$(Configuration)-$(Platform)\;..\..\..\..\game-libs-msvc\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\..\src\3rdParty\CppDelegates;..\..\..\src\SimpleEngine\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <OutDir>..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetExt>.elf</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <OutDir>..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetExt>.exe</TargetExt>
+    <LibraryPath>..\..\..\lib\$(Configuration)-$(Platform)\;..\..\..\..\game-libs-msvc\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\..\src\3rdParty\CppDelegates;..\..\..\src\SimpleEngine\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src\3rdParty\CppDelegates;..\..\..\src\SimpleEngine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>O2</Optimization>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+    </ClCompile>
+    <Link>
+      <LibrarySearchDirectories>..\..\..\..\game-libs-cm7\lib;..\..\..\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>core;SimpleEngine;Box2D;z;png;%(AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript>..\..\..\src\STM32F765ZGTx_FLASH.ld</LinkerScript>
+      <GenerateMapFile>true</GenerateMapFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src\SimpleEngine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <PreprocessorDefinitions>main=SDL_main;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <LibrarySearchDirectories>..\..\..\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>core;SimpleEngine;Box2D;z;png;%(AdditionalLibraryNames)</AdditionalLibraryNames>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>SimpleEngine.lib;Box2D.lib;SDL2.lib;SDL2main.lib;zlib.lib;libpng16.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src\3rdParty\CppDelegates;..\..\..\src\SimpleEngine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Og</Optimization>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+    </ClCompile>
+    <Link>
+      <LibrarySearchDirectories>..\..\..\..\game-libs-cm7\lib;..\..\..\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>core;SimpleEngine;Box2D;z;png;%(AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript>..\..\..\src\STM32F765ZGTx_FLASH.ld</LinkerScript>
+      <GenerateMapFile>true</GenerateMapFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src\SimpleEngine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <PreprocessorDefinitions>main=SDL_main;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <LibrarySearchDirectories>..\..\..\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>core;SimpleEngine;Box2D;z;png;%(AdditionalLibraryNames)</AdditionalLibraryNames>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>SimpleEngine.lib;Box2D.lib;SDL2.lib;SDL2main.lib;zlib.lib;libpng16.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="collision-Debug.vgdbsettings" />
+    <None Include="collision-Release.vgdbsettings" />
+    <None Include="mcu.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\collision\CollisionApp.cpp" />
+    <ClCompile Include="..\..\..\src\collision\CollisionLogic.cpp" />
+    <ClCompile Include="..\..\..\src\collision\CollisionView.cpp" />
+    <ClCompile Include="..\..\..\src\collision\main.cpp" />
+    <ClCompile Include="..\..\..\src\collision\MainMenuView.cpp" />
+    <ClCompile Include="..\..\..\src\collision\ScoreCounter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\collision\CollisionApp.hpp" />
+    <ClInclude Include="..\..\..\src\collision\CollisionLogic.hpp" />
+    <ClInclude Include="..\..\..\src\collision\CollisionView.hpp" />
+    <ClInclude Include="..\..\..\src\collision\MainMenuView.hpp" />
+    <ClInclude Include="..\..\..\src\collision\RC\resource.h" />
+    <ClInclude Include="..\..\..\src\collision\ScoreCounter.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\src\collision\RC\collision.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\src\collision\RC\26205_ball_draw_sphere.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\..\..\src\collision\RC\ModernStyle.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_StartDate="2000/1/1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

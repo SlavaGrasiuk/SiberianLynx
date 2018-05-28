@@ -1,7 +1,10 @@
-#include "include\SimpleEngineApp.hpp"
-#include "include\BaseGameLogic.hpp"
-#include "EventManager\EventManager_local.hpp"
-#include <SDL2\SDL.h>
+#include "include/SimpleEngineApp.hpp"
+#include "include/BaseGameLogic.hpp"
+#include "EventManager/EventManager_local.hpp"
+#include "include/Resource/ResourceManager.hpp"
+#include "include/Graphics2D/Texture.hpp"
+#include "include/Graphics2D/Renderer.hpp"
+#include <SDL2/SDL.h>
 #include <chrono>
 #include <cstring>
 #ifdef _WIN32
@@ -23,7 +26,7 @@ SimpleEngineApp *g_app;
 SimpleEngineApp::SimpleEngineApp
 ==================
 */
-SimpleEngineApp::SimpleEngineApp(): m_game(nullptr), m_eventManager(nullptr), m_isRunning(false), m_quiting(false), m_exitCode(1) {
+SimpleEngineApp::SimpleEngineApp(): m_game(nullptr), m_eventManager(nullptr), m_renderer(nullptr), m_resourceManager(nullptr), m_window(nullptr), m_isRunning(false), m_quiting(false), m_exitCode(1) {
 	g_app = this;
 }
 
@@ -39,9 +42,18 @@ bool SimpleEngineApp::Init(int argc, char ** argv, const int screenW, const int 
 	RegisterEngineEvents();
 	RegisterGameEvents();
 
-	//NOTE here we can initialize resource cache, strings and scripting
+	IResourceFile *zipFile = new(std::nothrow) ResourceZipFile("assets.dat");
+	m_resourceManager = new(std::nothrow) ResourceManager(zipFile);
 
-	m_eventManager = new EventManager;
+	if (!m_resourceManager->Init()) {
+		return false;	//can't init resource manager
+	}
+
+	m_resourceManager->RegisterLoader(make_shared<PngImageLoader>());
+
+	//NOTE here we can initialize strings and scripting
+
+	m_eventManager = new(std::nothrow) EventManager;
 	if (m_eventManager == nullptr) {
 		return false;
 	}
@@ -58,7 +70,10 @@ bool SimpleEngineApp::Init(int argc, char ** argv, const int screenW, const int 
 	SDL_GetWindowSize(m_window, &m_windowW, &m_windowH);		//Window can have size less than requested one.
 	LoadWindowIcon();
 
-	//NOTE create and initialize renderer here
+	m_renderer = new(std::nothrow) Renderer2D;
+	if (!m_renderer->Init(true, true)) {
+		return false;
+	}
 
 	m_game = CreateGameAndView();
 	if (m_game == nullptr) {
@@ -174,7 +189,9 @@ void SimpleEngineApp::Shutdown() {
 
 	SAFE_DELETE(m_eventManager)
 
-	//SAFE_DELETE(m_renderer)
+	SAFE_DELETE(m_resourceManager)
+
+	SAFE_DELETE(m_renderer)
 
 	SDL_DestroyWindow(m_window);
 	SDL_Quit();
@@ -187,6 +204,32 @@ SimpleEngineApp::GetWindow
 */
 SDL_Window * SimpleEngineApp::GetWindow() const {
 	return m_window;
+}
+
+int SimpleEngineApp::GetWindowWidth() const {
+	return m_windowW;
+}
+
+int SimpleEngineApp::GetWindowHeight() const {
+	return m_windowH;
+}
+
+/*
+==================
+SimpleEngineApp::GetRenderer
+==================
+*/
+Renderer2D * SimpleEngineApp::GetRenderer() const {
+	return m_renderer;
+}
+
+/*
+==================
+SimpleEngineApp::GetResourceMan
+==================
+*/
+ResourceManager * SimpleEngineApp::GetResourceMan() const {
+	return m_resourceManager;
 }
 
 /*
@@ -277,12 +320,14 @@ SimpleEngineApp::OnRender
 */
 void SimpleEngineApp::OnRender(const float deltaTimeMs) {
 	for (auto &view : m_game->GetGameViewList()) {
-		view->VOnRender(deltaTimeMs);
+		if (view->GetType() == GameViewType::HUMAN) {
+			view->OnRender(deltaTimeMs);
+		}
 	}
 
 	m_game->RenderDiagnostic();
 
-	//Call PresentScene on renderer. Execution will be locket until vsync.
+	m_renderer->PresentScene();		//execution locked till vsync
 }
 
 /*

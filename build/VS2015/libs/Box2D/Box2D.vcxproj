@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9ABE7B5E-4E0C-4EE8-A60B-0231F697E155}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <TargetExt>.lib</TargetExt>
+    <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <IncludePath>..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <TargetExt>.lib</TargetExt>
+    <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <IncludePath>..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <Optimization>Og</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <InstructionSet>THUMB</InstructionSet>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <FloatABI>hard</FloatABI>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMFPU>fpv5-d16</ARMFPU>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainSettingsContainer>
+      <ARMCPU>cortex-m7</ARMCPU>
+    </ToolchainSettingsContainer>
+    <ClCompile>
+      <Optimization>O2</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Box2D-Debug.vgdbsettings" />
+    <None Include="Box2D-Release.vgdbsettings" />
+    <None Include="mcu.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Box2D.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2BroadPhase.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2Collision.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2Distance.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2DynamicTree.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2TimeOfImpact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2ChainShape.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2CircleShape.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2EdgeShape.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2PolygonShape.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2Shape.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2BlockAllocator.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Draw.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2GrowableStack.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Math.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Settings.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2StackAllocator.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Timer.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2Body.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2ContactManager.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2Fixture.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2Island.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2TimeStep.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2World.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2WorldCallbacks.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2CircleContact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2Contact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2ContactSolver.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2PolygonContact.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2DistanceJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2FrictionJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2GearJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2Joint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2MotorJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2MouseJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2PrismaticJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2PulleyJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2RevoluteJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2RopeJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2WeldJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2WheelJoint.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Rope\b2Rope.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2BroadPhase.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2CollideCircle.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2CollideEdge.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2CollidePolygon.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2Collision.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2Distance.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2DynamicTree.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\b2TimeOfImpact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2ChainShape.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2CircleShape.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2EdgeShape.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Collision\Shapes\b2PolygonShape.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2BlockAllocator.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Draw.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Math.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Settings.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2StackAllocator.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Common\b2Timer.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2Body.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2ContactManager.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2Fixture.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2Island.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2World.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\b2WorldCallbacks.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2CircleContact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2Contact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2ContactSolver.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Contacts\b2PolygonContact.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2DistanceJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2FrictionJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2GearJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2Joint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2MotorJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2MouseJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2PrismaticJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2PulleyJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2RevoluteJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2RopeJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2WeldJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D\Box2D\Rope\b2Rope.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_StartDate="2000/1/1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

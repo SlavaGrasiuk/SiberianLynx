@@ -7,7 +7,7 @@
 BaseGameLogic::BaseGameLogic
 ==================
 */
-BaseGameLogic::BaseGameLogic() : m_state(BaseGameState::Initializing), m_processManager(new ProcessManager) {
+BaseGameLogic::BaseGameLogic() : m_state(BaseGameState::Initializing), m_processManager(new(std::nothrow) ProcessManager) {
 
 }
 
@@ -72,7 +72,7 @@ void BaseGameLogic::OnUpdate(const float deltaTimeMs) {
 	}
 
 	for (auto &view : m_gameViews) {
-		view->VOnUpdate(deltaTimeMs);
+		view->OnUpdate(deltaTimeMs);
 	}
 
 	//update actors
@@ -85,6 +85,8 @@ BaseGameLogic::ChangeState
 */
 void BaseGameLogic::ChangeState(BaseGameState newState) {
 
+
+	m_state = newState;
 }
 
 /*
@@ -94,6 +96,35 @@ BaseGameLogic::GetGameViewList
 */
 GameViewList & BaseGameLogic::GetGameViewList() {
 	return m_gameViews;
+}
+
+/*
+==================
+BaseGameLogic::Init
+==================
+*/
+bool BaseGameLogic::Init() {
+	return true;
+}
+
+/*
+==================
+BaseGameLogic::AddView
+==================
+*/
+void BaseGameLogic::AddView(std::shared_ptr<IGameView> view, ActorId actorId) {
+	const int viewId = static_cast<int>(m_gameViews.size());
+	m_gameViews.push_back(view);
+	view->OnAttach(viewId, actorId);
+}
+
+/*
+==================
+BaseGameLogic::RemoveView
+==================
+*/
+void BaseGameLogic::RemoveView(std::shared_ptr<IGameView> view) {
+	m_gameViews.remove(view);
 }
 
 /*

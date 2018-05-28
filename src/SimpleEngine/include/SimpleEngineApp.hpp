@@ -4,6 +4,7 @@
 
 class BaseGameLogic;
 class Renderer2D;
+class ResourceManager;
 struct SDL_Window;
 union SDL_Event;
 
@@ -23,7 +24,7 @@ class SimpleEngineApp {
 	BaseGameLogic *m_game;
 	IEventManager *m_eventManager;
 	Renderer2D *m_renderer;
-
+	ResourceManager *m_resourceManager;
 	SDL_Window *m_window;
 
 	bool m_isRunning, m_quiting;
@@ -38,6 +39,10 @@ public:
 	void MainLoop();
 	void Shutdown();
 	SDL_Window *GetWindow() const;
+	int GetWindowWidth() const;
+	int GetWindowHeight() const;
+	Renderer2D *GetRenderer() const;
+	ResourceManager *GetResourceMan() const;
 	int GetExitCode() const;
 	void AbortGame(const int exitCode = 1);
 	IEventManager *GetEventManager() const;

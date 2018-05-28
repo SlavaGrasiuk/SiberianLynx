@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{8c1f6759-7d8f-4d75-ada7-2fe64b10f802}</UniqueIdentifier>
+      <Extensions>*.vgdbsettings</Extensions>
+    </Filter>
+    <Filter Include="VisualGDB settings\Device-specific files">
+      <UniqueIdentifier>{7aea9cd3-72a8-4705-9913-7e3fa15f900c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{dac6b210-9580-40d1-9743-36f48272910f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="collision-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="collision-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="mcu.props">
+      <Filter>VisualGDB settings\Device-specific files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml">
+      <Filter>VisualGDB settings</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\collision\main.cpp" />
+    <ClCompile Include="..\..\..\src\collision\CollisionApp.cpp" />
+    <ClCompile Include="..\..\..\src\collision\CollisionLogic.cpp" />
+    <ClCompile Include="..\..\..\src\collision\MainMenuView.cpp" />
+    <ClCompile Include="..\..\..\src\collision\ScoreCounter.cpp" />
+    <ClCompile Include="..\..\..\src\collision\CollisionView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\collision\CollisionApp.hpp" />
+    <ClInclude Include="..\..\..\src\collision\RC\resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\collision\CollisionLogic.hpp" />
+    <ClInclude Include="..\..\..\src\collision\MainMenuView.hpp" />
+    <ClInclude Include="..\..\..\src\collision\ScoreCounter.hpp" />
+    <ClInclude Include="..\..\..\src\collision\CollisionView.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\src\collision\RC\collision.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\src\collision\RC\26205_ball_draw_sphere.ico">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\..\..\src\collision\RC\ModernStyle.manifest">
+      <Filter>Resources</Filter>
+    </Manifest>
+  </ItemGroup>
+</Project>

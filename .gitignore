@@ -1,6 +1,7 @@
 temp/
 bin/
 lib/
+game/
 build/VS2015/tests/InitTest/VisualGDB/VisualGDBCache/InitTest-Release/*
 build/VS2015/tests/InitTest/VisualGDB/VisualGDBCache/InitTest-Debug/*
 build/VS2015/.vs

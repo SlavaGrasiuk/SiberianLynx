@@ -38,6 +38,11 @@ public:
 
 	GameViewList &GetGameViewList();
 
+	bool Init();
+
+	virtual void AddView(std::shared_ptr<IGameView> view, ActorId actorId = INVALID_ACTOR_ID);
+	virtual void RemoveView(std::shared_ptr<IGameView> view);
+
 	void AttachProcess(StrongProcessPtr process) {
 		if (m_processManager) {
 			m_processManager->AttachProcess(process);

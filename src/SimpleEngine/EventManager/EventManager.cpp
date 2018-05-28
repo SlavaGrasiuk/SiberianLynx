@@ -56,7 +56,7 @@ bool EventManager::TriggerEvent(const IEventPtr event) {
 	
 	bool processed = false;
 
-	const auto findIt = m_eventListeners.find(event->GetType());
+	const auto findIt = m_eventListeners.find(event->GetEventType());
 	if (findIt != m_eventListeners.end()) {
 		for (const auto &delegate : findIt->second) {
 			delegate(event);
@@ -77,7 +77,7 @@ bool EventManager::QueueEvent(const IEventPtr event) {
 		return false;
 	}
 
-	const auto findIt = m_eventListeners.find(event->GetType());
+	const auto findIt = m_eventListeners.find(event->GetEventType());
 	if (findIt != m_eventListeners.end()) {
 		m_eventQueues[m_activeQueue].push_front(event);
 		return true;
@@ -103,7 +103,7 @@ bool EventManager::AbortEvent(const EventType type, const bool allOfType) {
 			auto thisIt = it;		
 			it++;				//Removing an item from the queue will invalidate the iterator, so have it point to the next member
 
-			if ((*thisIt)->GetType() == type) {
+			if ((*thisIt)->GetEventType() == type) {
 				eventQueue.erase(thisIt);
 				success = true;
 				if (!allOfType) {
@@ -140,7 +140,7 @@ bool EventManager::Update(const float maxMs) {
 		auto eventPtr = queueToProcess.front();
 		queueToProcess.pop_front();
 
-		const auto findIt = m_eventListeners.find(eventPtr->GetType());
+		const auto findIt = m_eventListeners.find(eventPtr->GetEventType());
 		if (findIt != m_eventListeners.end()) {
 			for (const auto &delegate : findIt->second) {
 				delegate(eventPtr);

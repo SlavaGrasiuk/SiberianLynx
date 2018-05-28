@@ -32,6 +32,7 @@
     <GenerateBinFile>false</GenerateBinFile>
     <PlatformToolset>v140</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
@@ -42,6 +43,7 @@
     <GenerateBinFile>false</GenerateBinFile>
     <PlatformToolset>v140</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -51,7 +53,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <TargetName>lib$(ProjectName)</TargetName>
@@ -67,7 +69,7 @@
     <IncludePath>..\..\..\..\src\3rdParty\CppDelegates;..\..\..\..\..\game-libs-msvc\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <TargetName>lib$(ProjectName)</TargetName>
@@ -120,7 +122,7 @@
       <CLanguageStandard>C11</CLanguageStandard>
       <CPPLanguageStandard>CPP14</CPPLanguageStandard>
       <SupportRTTI>true</SupportRTTI>
-      <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\CppDelegates;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\..\game-libs-cm7\include;..\..\..\..\src\3rdParty\CppDelegates;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -172,7 +174,7 @@
       <CLanguageStandard>C11</CLanguageStandard>
       <CPPLanguageStandard>CPP14</CPPLanguageStandard>
       <SupportRTTI>true</SupportRTTI>
-      <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\CppDelegates;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\..\game-libs-cm7\include;..\..\..\..\src\3rdParty\CppDelegates;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -197,13 +199,20 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\BaseGameLogic.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\Event.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\EventManager\EventManager.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Graphics2D\Renderer.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Graphics2D\Texture.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Interfaces.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\Process.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\MainLoop\ProcessManager.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Resource\ResourceManager.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineApp.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\include\SimpleEngineEntry.hpp" />
-    <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\UserInterface\Background.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\UserInterface\Dialog.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\UserInterface\HumanView.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\UserInterface\Button.hpp" />
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\UserInterface\Control.hpp" />
     <ClInclude Include="..\..\..\..\src\SimpleEngine\Utilities\String.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -212,15 +221,27 @@
       <GenerateAssemblyOutput Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">false</GenerateAssemblyOutput>
       <GenerateAssemblyOutput Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">false</GenerateAssemblyOutput>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Graphics2D\Renderer.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Graphics2D\Texture.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\Process.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\MainLoop\ProcessManager.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineApp.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\SimpleEngineEntry.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Background.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Button.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Control.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Dialog.cpp" />
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\HumanView.cpp" />
     <ClCompile Include="..\..\..\..\src\SimpleEngine\Utilities\String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_StartDate="2000/1/1" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

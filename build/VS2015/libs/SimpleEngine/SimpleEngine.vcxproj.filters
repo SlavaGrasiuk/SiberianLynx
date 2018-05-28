@@ -20,6 +20,12 @@
     <Filter Include="Utilities">
       <UniqueIdentifier>{1bb8d8ae-72ae-43dc-b772-d784d687910a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UserInterface">
+      <UniqueIdentifier>{d706a456-cc7c-4537-958c-8e239f420850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics2D">
+      <UniqueIdentifier>{d20d1462-7305-4491-acb2-661aa2bca62a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="SimpleEngine-Debug.vgdbsettings">
@@ -57,11 +63,32 @@
     <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ZipFile.hpp">
       <Filter>Resource</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\SimpleEngine\Resource\ResourceManager.hpp">
-      <Filter>Resource</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\src\SimpleEngine\Utilities\String.hpp">
       <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\UserInterface\Background.hpp">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\UserInterface\HumanView.hpp">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\UserInterface\Dialog.hpp">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\UserInterface\Button.hpp">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\UserInterface\Control.hpp">
+      <Filter>UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Resource\ResourceManager.hpp">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Graphics2D\Renderer.hpp">
+      <Filter>Graphics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\SimpleEngine\include\Graphics2D\Texture.hpp">
+      <Filter>Graphics2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +112,27 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\SimpleEngine\Utilities\String.cpp">
       <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Graphics2D\Texture.cpp">
+      <Filter>Graphics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\Graphics2D\Renderer.cpp">
+      <Filter>Graphics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\HumanView.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Dialog.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Control.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Button.cpp">
+      <Filter>UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SimpleEngine\UserInterface\Background.cpp">
+      <Filter>UserInterface</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
