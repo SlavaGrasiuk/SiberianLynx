@@ -51,10 +51,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetName>lib$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
@@ -66,10 +67,11 @@
     <IncludePath>..\..\..\..\src\3rdParty\Box2D-2.3.1\Box2D;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetName>lib$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
@@ -130,7 +132,6 @@
   <ItemGroup>
     <None Include="Box2D-Debug.vgdbsettings" />
     <None Include="Box2D-Release.vgdbsettings" />
-    <None Include="mcu.props" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="MCU.xml" />

@@ -53,6 +53,12 @@
     <Filter Include="drv\HAL\Src">
       <UniqueIdentifier>{09bf7efa-55d1-4ed6-8ffc-b42909235b10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{10471482-dee1-48b6-a9db-63fde9579b8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem\FatFs">
+      <UniqueIdentifier>{4ebe8110-34e1-47d6-ad6b-b50aa4018ed0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="core-Debug.vgdbsettings">
@@ -61,6 +67,7 @@
     <None Include="core-Release.vgdbsettings">
       <Filter>VisualGDB settings</Filter>
     </None>
+    <None Include="..\..\..\..\src\core\thread" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="MCU.xml">
@@ -223,6 +230,18 @@
     <ClInclude Include="..\..\..\..\src\core\scmRTOS_TARGET_CFG.h">
       <Filter>scmRTOS</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\diskio.h">
+      <Filter>FileSystem\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\ff.h">
+      <Filter>FileSystem\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\ffconf.h">
+      <Filter>FileSystem\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\integer.h">
+      <Filter>FileSystem\FatFs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.cpp">
@@ -355,6 +374,21 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp">
       <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\FileSystem\sdcard.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\FileSystem\sysCalls.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\3rdParty\FatFs\ff.c">
+      <Filter>FileSystem\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\3rdParty\FatFs\ffsystem.c">
+      <Filter>FileSystem\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\3rdParty\FatFs\ffunicode.c">
+      <Filter>FileSystem\FatFs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

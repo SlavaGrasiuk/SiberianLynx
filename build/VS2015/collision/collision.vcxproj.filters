@@ -19,9 +19,7 @@
     <None Include="collision-Release.vgdbsettings">
       <Filter>VisualGDB settings</Filter>
     </None>
-    <None Include="mcu.props">
-      <Filter>VisualGDB settings\Device-specific files</Filter>
-    </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="MCU.xml">

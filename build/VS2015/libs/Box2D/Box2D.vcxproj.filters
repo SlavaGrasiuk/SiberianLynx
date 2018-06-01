@@ -37,9 +37,6 @@
     <None Include="Box2D-Release.vgdbsettings">
       <Filter>VisualGDB settings</Filter>
     </None>
-    <None Include="mcu.props">
-      <Filter>VisualGDB settings\Device-specific files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="MCU.xml">

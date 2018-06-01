@@ -3,9 +3,9 @@
 #define MANGOFF		extern "C"
 
 #ifdef DEBUG
-static constexpr bool g_debug = true;
+constexpr bool g_debug = true;
 #elif defined(NDEBUG)
-static constexpr bool g_debug = false;
+constexpr bool g_debug = false;
 #endif
 
 #define barrier()		__asm volatile("": : :"memory")		//Compiller memory barrier

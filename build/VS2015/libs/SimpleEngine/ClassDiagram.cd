@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="EventManager">
+    <Position X="31.5" Y="4.75" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAACEAAIBIAAAAEAAABACAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\EventManager\EventManager_local.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IEvent">
+    <Position X="14.25" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAABAAABAg=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\EventManager\Event.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseEvent">
+    <Position X="14.25" Y="6.5" Width="2.5" />
+    <InheritanceLine Type="IEvent" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="5.623" />
+        <Point X="15.5" Y="5.788" />
+        <Point X="15.5" Y="5.788" />
+        <Point X="15.5" Y="6.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEg=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\EventManager\Event.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IEventManager">
+    <Position X="31.5" Y="1" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACEAAABAAAAAAAAABAAAAIAAACAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\EventManager\EventManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Process">
+    <Position X="17.75" Y="17.25" Width="3" />
+    <NestedTypes>
+      <Enum Name="Process::State" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\MainLoop\Process.hpp</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAgBEEAAAAFAACAAgAAEEgAAAIBCIQAAAAgAAEEAQA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\MainLoop\Process.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProcessManager">
+    <Position X="24" Y="11.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAEAAARAAAAAAAECAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\MainLoop\ProcessManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceZipFile">
+    <Position X="0.5" Y="6.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABACAAAIIAgAAAgAAAAAAQAAEQAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Resource\ResourceManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DefaultResourceLoader">
+    <Position X="31.5" Y="20" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAwAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Resource\ResourceManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IResourceExtraData">
+    <Position X="18.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Resource\ResourceManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResHandle">
+    <Position X="22" Y="17.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAQEAAAIgAAQAAAAAAAAgAAAAABAAAAEAAIARAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Resource\ResourceManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceManager">
+    <Position X="24" Y="7.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAAAAAAAAAAAAAAgEAAAAAEIAAAAAAECAAgIAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Resource\ResourceManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZipFile">
+    <Position X="27.25" Y="17.25" Width="2.75" />
+    <NestedTypes>
+      <Struct Name="ZipFile::TZipDirHeader" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\my_exp\SiberianLynx\src\SimpleEngine\Resource\ZipFile.hpp</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="ZipFile::TZipDirFileHeader" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\my_exp\SiberianLynx\src\SimpleEngine\Resource\ZipFile.hpp</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="ZipFile::TZipLocalHeader" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\my_exp\SiberianLynx\src\SimpleEngine\Resource\ZipFile.hpp</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAIAAAgIAAQAQAAAAAAgAQAACAAIAAABAAACAAAEQAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\Resource\ZipFile.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Background">
+    <Position X="5" Y="6" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQAAAAAIEAAAAAAAAgAAAABAAAAAAAAgIAEAAAQ=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\UserInterface\Background.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dialog">
+    <Position X="8.75" Y="6" Width="5" />
+    <TypeIdentifier>
+      <HashCode>REAAEAAAAIAIEAgAEAAAAAQAIABAIAAAEABAIIEABAQ=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\UserInterface\Dialog.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HumanView">
+    <Position X="6.5" Y="15.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAgAAAAAAAAAAAAIAAEAAAAABCGAFGAEABIAMAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\UserInterface\HumanView.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Button">
+    <Position X="12.5" Y="22.75" Width="3.5" />
+    <InheritanceLine Type="Control" FixedToPoint="true">
+      <Path>
+        <Point X="14.375" Y="21.439" />
+        <Point X="14.375" Y="22.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAQAIAIgAAAAAAAAIAAAAAAAAAAAAABAAAAEAIAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\UserInterface\Button.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Control">
+    <Position X="12.5" Y="12" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>IAAIIoEckIBoAUABAgxIgAAAQAAAAAWgAJAEACQggZA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\UserInterface\Control.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Renderer2D">
+    <Position X="30.25" Y="12.25" Width="8.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAAAACAAAABAAAAAAAAAAAQAIAAAACAQAAAAQ=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Graphics2D\Renderer.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureExtraData">
+    <Position X="17.25" Y="4.5" Width="4.25" />
+    <InheritanceLine Type="IResourceExtraData" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.375" Y="3.853" />
+        <Point X="19.375" Y="4.376" />
+        <Point X="19.375" Y="4.376" />
+        <Point X="19.375" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQACAAAAAAAEAYAAAAAAAAABAACAAAAAQEAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Graphics2D\Texture.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PngImageLoader">
+    <Position X="38" Y="20" Width="5.5" />
+    <InheritanceLine Type="IResourceLoader" FixedToPoint="true">
+      <Path>
+        <Point X="37.5" Y="18.815" />
+        <Point X="37.5" Y="19.625" />
+        <Point X="40.75" Y="19.625" />
+        <Point X="40.75" Y="20" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABgAAAwAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Graphics2D\Texture.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseGameLogic">
+    <Position X="1" Y="14.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQgQAAAAABBAgAAEAAABQAAAAAAACAAAAiCAEAgAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\BaseGameLogic.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IScreenElement">
+    <Position X="7.5" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAIEAAAAAAAAAAAAABgAAAAAAAgIAEAAAQ=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGameLogic">
+    <Position X="1.5" Y="12" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAABAAAAAAAACAAAAAAAEAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGameView">
+    <Position X="7" Y="12" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAABAAAEAAAABIAMAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IPointerHandler">
+    <Position X="20.75" Y="2.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITouchHandler">
+    <Position X="30.5" Y="9.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IResourceLoader">
+    <Position X="34.75" Y="16.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>gAABAAAAwAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IResourceFile">
+    <Position X="0.5" Y="3.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABACAAAIAABAAAgAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleEngineApp">
+    <Position X="17.75" Y="9" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>GQAACAAEAAAAgAAAACACiQAAABwQQKAABCiCIQGAIEA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\SimpleEngineApp.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Point" Collapsed="true">
+    <Position X="24.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\UserInterface\Control.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Rect" Collapsed="true">
+    <Position X="26.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAgAAAAIAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\UserInterface\Control.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="DialogEventType" Collapsed="true">
+    <Position X="26.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\UserInterface\Dialog.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BaseGameState" Collapsed="true">
+    <Position X="24.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAUAAAAAgAAAAAAAAQAAAAAAAIAAAAAAQAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\BaseGameLogic.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameViewType" Collapsed="true">
+    <Position X="28.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAAAAAAEAAAAAAAAAAAAAAABAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>D:\my_exp\SiberianLynx\src\SimpleEngine\include\Interfaces.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

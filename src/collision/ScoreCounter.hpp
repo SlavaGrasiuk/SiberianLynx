@@ -19,7 +19,7 @@ class ScoreCounter : public IScreenElement {
 
 	static constexpr int DIGITS_COUNT = 10;		//number of frames in texture
 	static constexpr int MAX_DIGITS_COUNT = 6;		//max number of digits on screen
-	int frameNums[MAX_DIGITS_COUNT];
+	int m_frameNums[MAX_DIGITS_COUNT];
 
 	int m_score;
 
@@ -42,7 +42,9 @@ public:
 		m_visible = visible;
 	}
 
-	virtual bool OnMsgProc(const SDL_Event * const msg) override final {}
+	virtual bool OnMsgProc(const SDL_Event * const msg) override final {
+		return false;
+	}
 
 public:
 	void ScoreUpdateDelegate(IEventPtr eventData);

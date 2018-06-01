@@ -45,8 +45,8 @@ void ScoreCounter::OnRender(const float deltaTimeMs) {
 		int tmpX = m_x + m_digitWidth * MAX_DIGITS_COUNT;
 
 		for (int i = 0; i < MAX_DIGITS_COUNT; i++, tmpX -= m_digitWidth) {
-			if (frameNums[i] != -1) {
-				renderer->RenderSprite(texture, tmpX, m_y, DIGITS_COUNT, frameNums[i]);
+			if (m_frameNums[i] != -1) {
+				renderer->RenderSprite(texture, tmpX, m_y, DIGITS_COUNT, m_frameNums[i]);
 			}
 		}
 	}
@@ -63,15 +63,15 @@ void ScoreCounter::ScoreUpdateDelegate(IEventPtr eventData) {
 	m_score = castEventData->GetScore();
 	int tmpScore = m_score;
 
-	frameNums[MAX_DIGITS_COUNT - 1] = tmpScore % 10;		// we must draw at least one zero
+	m_frameNums[MAX_DIGITS_COUNT - 1] = tmpScore % 10;		// we must draw at least one zero
 	tmpScore /= 10;
 
 	for (int i = MAX_DIGITS_COUNT - 1 - 1; i > 0; i--) {
 		if (tmpScore) {
-			frameNums[i] = tmpScore % 10;
+			m_frameNums[i] = tmpScore % 10;
 			tmpScore /= 10;
 		} else {
-			frameNums[i] = -1;		//mark digit as void
+			m_frameNums[i] = -1;		//mark digit as void
 		}
 	}
 }

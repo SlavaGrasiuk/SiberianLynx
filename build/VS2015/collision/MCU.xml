@@ -20,8 +20,8 @@
       <EnableLinkerGroups>true</EnableLinkerGroups>
     </CompilationFlags>
     <AdditionalSourceFiles />
-    <FLASHSize>0</FLASHSize>
-    <RAMSize>0</RAMSize>
+    <FLASHSize>1048576</FLASHSize>
+    <RAMSize>524288</RAMSize>
     <FLASHBase>4294967295</FLASHBase>
     <RAMBase>4294967295</RAMBase>
     <AdditionalSourcesRequiredForTesting>false</AdditionalSourcesRequiredForTesting>

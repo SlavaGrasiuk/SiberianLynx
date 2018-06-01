@@ -214,6 +214,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\src\core\thread" />
     <None Include="core-Debug.vgdbsettings" />
     <None Include="core-Release.vgdbsettings" />
   </ItemGroup>
@@ -221,6 +222,10 @@
     <Xml Include="MCU.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\diskio.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\ff.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\ffconf.h" />
+    <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\integer.h" />
     <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.h" />
     <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_services.h" />
     <ClInclude Include="..\..\..\..\src\3rdParty\scmRTOS\core\scmRTOS.h" />
@@ -276,6 +281,9 @@
     <ClInclude Include="..\..\..\..\src\core\stm32f7xx_hal_conf.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\3rdParty\FatFs\ff.c" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\FatFs\ffsystem.c" />
+    <ClCompile Include="..\..\..\..\src\3rdParty\FatFs\ffunicode.c" />
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.cpp" />
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_services.cpp" />
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\usrlib.cpp" />
@@ -317,6 +325,8 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_sdmmc.c" />
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_usb.c" />
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\FileSystem\sdcard.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\FileSystem\sysCalls.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\initcpu.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\reset.cpp" />
