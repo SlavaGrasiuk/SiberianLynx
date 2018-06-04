@@ -366,15 +366,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
     <ClCompile Include="..\..\..\..\src\core\UserAppProc.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\startup\reset.cpp">
-      <Filter>startup</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\core\startup\initcpu.cpp">
-      <Filter>startup</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp">
-      <Filter>startup</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\FileSystem\sdcard.cpp">
       <Filter>FileSystem</Filter>
     </ClCompile>
@@ -389,6 +380,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\3rdParty\FatFs\ffunicode.c">
       <Filter>FileSystem\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\startup.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\sdram.cpp">
+      <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\startup\clocks.cpp">
+      <Filter>startup</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

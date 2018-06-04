@@ -2,9 +2,6 @@
 #include <stm32f7xx_hal.h>
 #include <commdef.hpp>
 
-namespace core {
-	void InitCPU();
-}
 
 uint32_t SystemCoreClock = 216'000'000;
 const uint8_t AHBPrescTable[16] = { 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9 };
@@ -12,12 +9,12 @@ const uint8_t APBPrescTable[8] = { 0, 0, 0, 0, 1, 2, 3, 4 };
 
 /*
 ==================
-core::InitCPU
+_init
 
 	Configure clocks, CPU cache and flash interface.
 ==================
 */
-void core::InitCPU() {
+extern "C" void _init() {
 	//Enable Bus Fault, Memory Fault, Usage Fault exceptions
 	SCB->SHCSR |= (SCB_SHCSR_BUSFAULTENA_Msk | SCB_SHCSR_MEMFAULTENA_Msk | SCB_SHCSR_USGFAULTENA_Msk);
 

@@ -327,9 +327,9 @@
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
     <ClCompile Include="..\..\..\..\src\core\FileSystem\sdcard.cpp" />
     <ClCompile Include="..\..\..\..\src\core\FileSystem\sysCalls.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\startup\DevVectors.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\startup\initcpu.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\startup\reset.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\startup\clocks.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\startup\sdram.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\startup\startup.cpp" />
     <ClCompile Include="..\..\..\..\src\core\UserAppProc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

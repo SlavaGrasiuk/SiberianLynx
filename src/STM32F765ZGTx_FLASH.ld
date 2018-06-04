@@ -51,8 +51,6 @@
 /* Entry Point */
 ENTRY(Reset_Handler)
 
-EXTERN(Default_Handler_Dev, g_userApp)
-
 /* Highest address of the user mode stack */
 _estack = 0x20080000;		/* end of RAM */
 
@@ -64,6 +62,7 @@ _Min_Stack_Size = 2048;		/* required amount of stack */
 MEMORY {
 	FLASH (rx)	: ORIGIN = 0x08000000,	LENGTH = 1024K
 	RAM (xrw)	: ORIGIN = 0x20000000,	LENGTH = 512K
+	SDRAM (xrw)	: ORIGIN = 0xC0000000,	LENGTH = 32M
 }
 
 /* Define output sections */
