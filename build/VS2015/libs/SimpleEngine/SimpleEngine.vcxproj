@@ -188,7 +188,6 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="SimpleEngine-Debug.vgdbsettings" />
     <None Include="SimpleEngine-Release.vgdbsettings" />
   </ItemGroup>

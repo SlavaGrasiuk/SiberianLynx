@@ -214,7 +214,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="collision-Debug.vgdbsettings" />
     <None Include="collision-Release.vgdbsettings" />
   </ItemGroup>

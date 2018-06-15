@@ -126,7 +126,7 @@ extern "C" {
 
 extern "C" [[noreturn]] void Reset_Handler();		//used in linker script as entry point
 
-extern unsigned int _estack;						//end of internal RAM, defined in linker script
+extern unsigned int _estack;						//symbol at the end of the internal RAM, defined in linker script
 
 using intfunc = void(*)();
 
