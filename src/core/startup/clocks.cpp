@@ -1,20 +1,25 @@
 #include <stm32f7xx.h>
-#include <stm32f7xx_hal.h>
-#include <commdef.hpp>
+//#include <stm32f7xx_hal.h>
+//#include <commdef.hpp>
 
 
-uint32_t SystemCoreClock = 216'000'000;
+/*uint32_t SystemCoreClock = 216'000'000;
 const uint8_t AHBPrescTable[16] = { 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9 };
-const uint8_t APBPrescTable[8] = { 0, 0, 0, 0, 1, 2, 3, 4 };
+const uint8_t APBPrescTable[8] = { 0, 0, 0, 0, 1, 2, 3, 4 };*/ 
+
+namespace core {
+	void InitCPU();
+	void InitClock();
+}
 
 /*
 ==================
-_init
+core::InitCPU
 
-	Configure clocks, CPU cache and flash interface.
+	Init Cortex-M7 CPU
 ==================
 */
-extern "C" void _init() {
+void core::InitCPU() {
 	//Enable Bus Fault, Memory Fault, Usage Fault exceptions
 	SCB->SHCSR |= (SCB_SHCSR_BUSFAULTENA_Msk | SCB_SHCSR_MEMFAULTENA_Msk | SCB_SHCSR_USGFAULTENA_Msk);
 
@@ -23,6 +28,23 @@ extern "C" void _init() {
 	SCB->CPACR |= ((3UL << 10 * 2) | (3UL << 11 * 2));  // set CP10 and CP11 Full Access
 #endif
 
+	// Configure the Vector Table location add offset address
+	SCB->VTOR = FLASH_BASE;					// Vector Table Relocation in Internal FLASH
+
+	// Enable instruction and data cache
+	SCB_EnableICache();
+	SCB_EnableDCache();
+}
+
+/*
+==================
+core::InitClock
+
+	Init clock generator and bus dividers
+==================
+*/
+void core::InitClock() {
+#pragma region RCC reset
 	// Reset the RCC clock configuration to the default reset state
 	RCC->CR |= uint32_t(0x00'00'00'01);		// Set HSION bit
 
@@ -40,44 +62,49 @@ extern "C" void _init() {
 
 	// Disable all interrupts
 	RCC->CIR = 0x00'00'00'00;
+#pragma endregion
 
-	// Configure the Vector Table location add offset address
-	SCB->VTOR = FLASH_BASE;					// Vector Table Relocation in Internal FLASH
+	//Power config
+	SET_BIT(RCC->APB1ENR, RCC_APB1ENR_PWREN);				//enable power controller
+	volatile uint32_t tmpreg = READ_BIT(RCC->APB1ENR, RCC_APB1ENR_PWREN);
 
-	// Enable branch prediction
-	SCB->CCR |= (1 << 18);
-	__DSB();
+	MODIFY_REG(PWR->CR1, PWR_CR1_VOS, (PWR_CR1_VOS));		//SCALE1 mode
+	tmpreg = READ_BIT(PWR->CR1, PWR_CR1_VOS);
 
-	// Enable instruction and data cache
-	SCB_EnableICache();
-	SCB_EnableDCache();
+	//HSE config
+	SET_BIT(RCC->CR, RCC_CR_HSEON);				//enable HSE
+	while (!READ_BIT(RCC->CR, RCC_CR_HSERDY));	//wait till HSE ready
 
-	RCC_OscInitTypeDef RCC_OscInitStruct;
-	RCC_ClkInitTypeDef RCC_ClkInitStruct;
+	//PLL config
+	RCC->PLLCFGR = (9 << RCC_PLLCFGR_PLLQ_Pos) | (0 << RCC_PLLCFGR_PLLP_Pos) | (432 << RCC_PLLCFGR_PLLN_Pos) | (8 << RCC_PLLCFGR_PLLM_Pos) | RCC_PLLCFGR_PLLSRC;
+	
+	SET_BIT(RCC->CR, RCC_CR_PLLON);		//Enable main PLL
 
-	// Configure the main internal regulator output voltage
-	__HAL_RCC_PWR_CLK_ENABLE();
-	__HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+	//Over-drive mode enable
+	SET_BIT(PWR->CR1, PWR_CR1_ODEN);
+	while (!READ_BIT(PWR->CSR1, PWR_CSR1_ODRDY));
 
-	// Configure PLL to provide 216 MHz on PLLP
-	RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-	RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-	RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-	RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-	RCC_OscInitStruct.PLL.PLLM = 8;		//For HSE crystal 8MHz
-	RCC_OscInitStruct.PLL.PLLN = 432;
-	RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-	RCC_OscInitStruct.PLL.PLLQ = 2;
-	HAL_RCC_OscConfig(&RCC_OscInitStruct);
+	SET_BIT(PWR->CR1, PWR_CR1_ODSWEN);
+	while (!READ_BIT(PWR->CSR1, PWR_CSR1_ODSWRDY));
 
-	// Activate the Over-Drive mode for 3.3v and 216 MHz
-	HAL_PWREx_EnableOverDrive();
+	//Set flash latency
+	MODIFY_REG(FLASH->ACR, FLASH_ACR_LATENCY, FLASH_ACR_LATENCY_7WS);
+	tmpreg = FLASH->ACR;
 
-	// Switch CPU, AHB and APB busses to 216 MHz SYSCLK
-	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK	| RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-	RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-	RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
-	RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
-	HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7);	// 7 WS for 3.3v 216MHz
+	//Config buses clocks
+	constexpr uint32_t cfgrClearMask = RCC_CFGR_PPRE2 | RCC_CFGR_PPRE1 | RCC_CFGR_HPRE;
+	constexpr uint32_t cfgrValue =	(0b100 << RCC_CFGR_PPRE2_Pos) |			//APB2 prescaller 2
+									(0b101 << RCC_CFGR_PPRE1_Pos) |			//APB1 prescaller 4
+									(0 << RCC_CFGR_HPRE_Pos);				//AHB prescaller 1
+	MODIFY_REG(RCC->CFGR, cfgrClearMask, cfgrValue);
+
+	//wait for PLL lock
+	while (!READ_BIT(RCC->CR, RCC_CR_PLLRDY));
+
+	//select PLL as clock source
+	MODIFY_REG(RCC->CFGR, RCC_CFGR_SW, (0b10 << RCC_CFGR_SW_Pos));
+	while ((RCC->CFGR & RCC_CFGR_SWS) != (0b10 << RCC_CFGR_SWS_Pos));
+
+	//Select PLLQ as CLK48 source, CLK48 as SDMMC1 and SDMMC2 clock
+	MODIFY_REG(RCC->DCKCFGR2, RCC_DCKCFGR2_CK48MSEL | RCC_DCKCFGR2_SDMMC1SEL | RCC_DCKCFGR2_SDMMC2SEL, 0);
 }

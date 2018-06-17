@@ -11,7 +11,7 @@ constexpr uint8_t SD_NORMAL_CLKDIV = 0;		//48MHz CLKSDIO / (SD_NORMAL_CLKDIV + 2
 
 using namespace std::chrono_literals;
 
-using SDIOModule_t = SDMMC_TypeDef;			//NOTE change to SDMMC_TypeDef for stm32f765zg
+using SDIOModule_t = SDMMC_TypeDef;
 
 enum class SDCommand: uint8_t {
 	CMD0 = 0,
@@ -219,7 +219,7 @@ static DSTATUS InitSDCard(SDIOModule_t *module, CardInfo &infoOut, const bool us
 			return STA_NOINIT;
 		}
 
-		unsigned int timeOut = 0xFF'FF;
+		unsigned int timeOut = 0xFF'FF'FF'FF;
 
 		//Check the ready status in the response (R3)
 		if ((module->RESP1 >> 31) == 1) { //When card is busy this bit will be 0

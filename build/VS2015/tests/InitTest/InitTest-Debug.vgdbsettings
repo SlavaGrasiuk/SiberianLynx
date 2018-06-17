@@ -34,6 +34,7 @@
     <ProjectFile>InitTest.vcxproj</ProjectFile>
     <RemoteBuildEnvironment>
       <Records />
+      <EnvironmentSetupFiles />
     </RemoteBuildEnvironment>
     <ParallelJobCount>1</ParallelJobCount>
   </Build>
@@ -97,7 +98,7 @@
         </KeyValue>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.initargs</Key>
-          <Value>-c "adapter_khz 4000"</Value>
+          <Value />
         </KeyValue>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.commands.halt</Key>
@@ -105,7 +106,7 @@
         </KeyValue>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.commands.program</Key>
-          <Value>load</Value>
+          <Value />
         </KeyValue>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.commands.reset</Key>

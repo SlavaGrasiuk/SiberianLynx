@@ -71,8 +71,7 @@ SECTIONS {
   .isr_vector :
   {
     . = ALIGN(4);
-    KEEP(*(.isr_vector_cpu))	/* Startup code */
-	KEEP(*(.isr_vector_dev))
+    KEEP(*(.isr_vector))	/* Startup code */
     . = ALIGN(4);
   } >FLASH
 
@@ -163,7 +162,7 @@ SECTIONS {
   } >RAM
 
   /* User_heap_stack section, used to check that there is enough RAM left */
-  ._user_heap_stack :
+  /* ._user_heap_stack :
   {
     . = ALIGN(8);
     PROVIDE ( end = . );
@@ -171,9 +170,7 @@ SECTIONS {
     . = . + _Min_Heap_Size;
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
-  } >RAM
-
-  
+  } >RAM */
 
   /* Remove information from the standard libraries */
   /DISCARD/ :
@@ -184,6 +181,7 @@ SECTIONS {
   }
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
+
+  sdramBegin = ORIGIN(SDRAM);
+  sdramEnd = ORIGIN(SDRAM)+ LENGTH(SDRAM);
 }
-
-

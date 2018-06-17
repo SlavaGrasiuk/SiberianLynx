@@ -242,6 +242,9 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\FatFs\integer.h">
       <Filter>FileSystem\FatFs</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\src\core\drv\lcd.hpp">
+      <Filter>drv</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\3rdParty\scmRTOS\core\os_kernel.cpp">
@@ -365,7 +368,6 @@
       <Filter>drv\HAL\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\UserAppProc.cpp" />
     <ClCompile Include="..\..\..\..\src\core\FileSystem\sdcard.cpp">
       <Filter>FileSystem</Filter>
     </ClCompile>
@@ -389,6 +391,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\src\core\startup\clocks.cpp">
       <Filter>startup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\drv\lcd.cpp">
+      <Filter>drv</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

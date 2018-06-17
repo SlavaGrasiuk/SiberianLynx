@@ -46,7 +46,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
@@ -61,7 +61,7 @@
     <TargetName>lib$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
@@ -274,6 +274,7 @@
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_sdmmc.h" />
     <ClInclude Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_usb.h" />
     <ClInclude Include="..\..\..\..\src\core\commdef.hpp" />
+    <ClInclude Include="..\..\..\..\src\core\drv\lcd.hpp" />
     <ClInclude Include="..\..\..\..\src\core\procsdef.hpp" />
     <ClInclude Include="..\..\..\..\src\core\scmRTOS_CONFIG.h" />
     <ClInclude Include="..\..\..\..\src\core\scmRTOS_extensions.h" />
@@ -325,12 +326,12 @@
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_sdmmc.c" />
     <ClCompile Include="..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_usb.c" />
     <ClCompile Include="..\..\..\..\src\core\CoreMain.cpp" />
+    <ClCompile Include="..\..\..\..\src\core\drv\lcd.cpp" />
     <ClCompile Include="..\..\..\..\src\core\FileSystem\sdcard.cpp" />
     <ClCompile Include="..\..\..\..\src\core\FileSystem\sysCalls.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\clocks.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\sdram.cpp" />
     <ClCompile Include="..\..\..\..\src\core\startup\startup.cpp" />
-    <ClCompile Include="..\..\..\..\src\core\UserAppProc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

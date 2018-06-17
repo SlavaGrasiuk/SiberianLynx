@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cstring>
 #include "../3rdParty/FatFs/ff.h"
-
+#include <new>
 
 /*
 ==================
@@ -9,7 +9,7 @@ fopen
 ==================
 */
 FILE *fopen(const char *__restrict name, const char *__restrict mode) {
-	FIL *file = new FIL;
+	FIL *file = new(std::nothrow) FIL;
 	BYTE modeFlags = 0;
 
 	switch (mode[0]) {

@@ -266,6 +266,8 @@ extern "C" void __libc_init_array();
 
 namespace core {
 	void InitSDRAM();
+	void InitCPU();
+	void InitClock();
 	[[noreturn]] void Main();
 }
 
@@ -278,7 +280,9 @@ void Reset_Handler() {
 	extern unsigned int _sidata, _sdata, _edata, _sbss, _ebss;		//defined in linker script
 	auto pulSrc = &_sidata;
 
-	core::InitSDRAM();		//first action after power up - initialize onboard SDRAM
+	core::InitCPU();
+	core::InitClock();
+	core::InitSDRAM();
 
 	/* Copy .data section */
 	for (auto pulDest = &_sdata; pulDest < &_edata; ) {
@@ -294,6 +298,17 @@ void Reset_Handler() {
 	__libc_init_array();
 
 	core::Main();
+}
+
+/*
+==================
+_init
+
+	Called from __libc_init_array
+==================
+*/
+extern "C" void _init() {
+
 }
 
 /*

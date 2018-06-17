@@ -14,7 +14,7 @@ core::InitSDRAM
 */
 void core::InitSDRAM() {
 	__IO uint32_t tmp = 0;
-	uint32_t tmpreg = 0, timeout = 0xFFFF, index;
+	uint32_t tmpreg = 0, timeout = 0xFFFF;
 
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOCEN | RCC_AHB1ENR_GPIODEN | RCC_AHB1ENR_GPIOEEN | RCC_AHB1ENR_GPIOFEN | RCC_AHB1ENR_GPIOGEN;
 	
@@ -26,13 +26,13 @@ void core::InitSDRAM() {
 	GPIOA->AFR[0] = 0xC0000000;
 	GPIOA->AFR[1] = 0x00000000;
 	/* Configure PAx pins in Alternate function mode */
-	GPIOA->MODER = 0x00008000;
+	GPIOA->MODER = 0x28008000;		//WARNING keep SWD pins at default state
 	/* Configure PAx pins speed to 100 MHz */
-	GPIOA->OSPEEDR = 0x0000C000;
+	GPIOA->OSPEEDR = 0x0C00C000;
 	/* Configure PAx pins Output type to push-pull */
 	GPIOA->OTYPER = 0x00000000;
 	/* No pull-up and no pull-down for PAx pins */
-	GPIOA->PUPDR = 0x00000000;
+	GPIOA->PUPDR = 0x24000000;
 
 	//PC4, PC5
 	/* Connect PCx pins to FMC Alternate function */
@@ -107,8 +107,8 @@ void core::InitSDRAM() {
 	tmp = READ_BIT(RCC->AHB3ENR, RCC_AHB3ENR_FMCEN);
 
 	/* Configure and enable SDRAM bank1 */
-	FMC_Bank5_6->SDCR[0] = 0x000019E5;
-	FMC_Bank5_6->SDTR[0] = 0x01116361;
+	FMC_Bank5_6->SDCR[0] = 0x00001959;	//No HCLK clock cycle delay, single read requests are always managed as bursts,  SDCLK period = 2 x HCLK periods, Write accesses allowed, 2 cycles CAS latency, Four internal Banks, 16 bits bus, 13 bits row adress, 9 bits column address
+	FMC_Bank5_6->SDTR[0] = 0x01116472;
 
 	/* SDRAM initialization sequence ---------------------------------------------*/
 	/* Clock enable command */
@@ -119,7 +119,7 @@ void core::InitSDRAM() {
 	}
 
 	/* Delay */
-	for (index = 0; index<1000; index++);
+	for (int index = 0; index < 14'400; index++);		//approx. 100us at 216 mhz
 
 	/* PALL command */
 	FMC_Bank5_6->SDCMR = 0x00000012;
@@ -136,17 +136,18 @@ void core::InitSDRAM() {
 	}
 
 	/* MRD register program */
-	FMC_Bank5_6->SDCMR = 0x00046014;
+	FMC_Bank5_6->SDCMR = 0x00044014;
 	timeout = 0xFFFF;
 	while ((tmpreg != 0) && (timeout-- > 0)) {
 		tmpreg = FMC_Bank5_6->SDSR & 0x00000020;
 	}
 
 	/* Set refresh count */
-	tmpreg = FMC_Bank5_6->SDRTR;
-	FMC_Bank5_6->SDRTR = (tmpreg | (0x00000603 << 1));
+	/*tmpreg = FMC_Bank5_6->SDRTR;
+	FMC_Bank5_6->SDRTR = (tmpreg | (0x00000603 << 1));*/
+	MODIFY_REG(FMC_Bank5_6->SDRTR, FMC_SDRTR_COUNT, (823 << FMC_SDRTR_COUNT_Pos));
 
 	/* Disable write protection */
-	tmpreg = FMC_Bank5_6->SDCR[0];
-	FMC_Bank5_6->SDCR[0] = (tmpreg & 0xFFFFFDFF);
+/*	tmpreg = FMC_Bank5_6->SDCR[0];
+	FMC_Bank5_6->SDCR[0] = (tmpreg & 0xFFFFFDFF);*/
 }

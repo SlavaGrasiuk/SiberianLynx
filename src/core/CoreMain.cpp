@@ -1,11 +1,19 @@
 #include <stm32f7xx.h>
 #include "procsdef.hpp"
 #include "commdef.hpp"
+#include "drv/lcd.hpp"
+#include "../3rdParty/FatFs/ff.h"
 
 
 namespace core {
 	[[noreturn]] void Main();
 }
+
+int main(int argc, char **argv);
+
+
+static core::UserApp g_userApp;
+static FATFS g_fs;
 
 
 /*
@@ -16,9 +24,33 @@ core::Main
 ==================
 */
 void core::Main() {
-
+	core::InitLcdBacklight();
 
 	OS::run();
+}
+
+/*
+==================
+core::UserApp::exec
+
+	call app ctors, change CWD and call main
+==================
+*/
+template<> void core::UserApp::exec() {
+	if (f_mount(&g_fs, "BSD:/", 1) != FR_OK) {
+		if (f_mount(&g_fs, "TSD:/", 1) != FR_OK) {
+			EXCEPT_HNDL()
+		} else {
+			f_chdir("TSD:/");
+		}
+	} else {
+		f_chdir("BSD:/");
+	}
+
+	main(0, nullptr);
+
+	OS::sleep();
+	__builtin_unreachable();
 }
 
 /*
@@ -32,17 +64,22 @@ void OS::idle_process_user_hook() {
 }
 #endif
 
-
-static BackLightCtrl g_backLightCtrl;
-
 /*
 ==================
-BackLightCtrl::exec
+_sbrk
 ==================
 */
-template<> void BackLightCtrl::exec() {
-	OS::sleep();
-	__builtin_unreachable();
+extern "C" caddr_t _sbrk(int incr) {
+	extern char sdramBegin, sdramEnd;		// Defined by the linker
+	static char *heapEnd = &sdramBegin;
+	char *prevHeapEnd = heapEnd;
+
+	if (heapEnd + incr > &sdramEnd) {
+		EXCEPT_HNDL()
+	}
+
+	heapEnd += incr;
+	return caddr_t(prevHeapEnd);
 }
 
 /*
@@ -50,7 +87,7 @@ template<> void BackLightCtrl::exec() {
 __cxa_pure_virtual
 ==================
 */
-MANGOFF void __cxa_pure_virtual() {
+extern "C" void __cxa_pure_virtual() {
 	EXCEPT_HNDL()
 }
 
@@ -59,43 +96,47 @@ MANGOFF void __cxa_pure_virtual() {
 abort
 ==================
 */
-MANGOFF void abort() {
+extern "C" void abort() {
 	EXCEPT_HNDL()
 	__builtin_unreachable();
 }
 
-/*
-==================
-HardFault_Handler
-==================
-*/
-MANGOFF void HardFault_Handler() {
-	EXCEPT_HNDL()
-}
+#pragma region Hardware exceptions
+extern "C" {
+	/*
+	==================
+	HardFault_Handler
+	==================
+	*/
+	void HardFault_Handler() {
+		EXCEPT_HNDL()
+	}
 
-/*
-==================
-MemManage_Handler
-==================
-*/
-MANGOFF void MemManage_Handler() {
-	EXCEPT_HNDL()
-}
+	/*
+	==================
+	MemManage_Handler
+	==================
+	*/
+	void MemManage_Handler() {
+		EXCEPT_HNDL()
+	}
 
-/*
-==================
-BusFault_Handler
-==================
-*/
-MANGOFF void BusFault_Handler() {
-	EXCEPT_HNDL()
-}
+	/*
+	==================
+	BusFault_Handler
+	==================
+	*/
+	void BusFault_Handler() {
+		EXCEPT_HNDL()
+	}
 
-/*
-==================
-UsageFault_Handler
-==================
-*/
-MANGOFF void UsageFault_Handler() {
-	EXCEPT_HNDL()
+	/*
+	==================
+	UsageFault_Handler
+	==================
+	*/
+	void UsageFault_Handler() {
+		EXCEPT_HNDL()
+	}
 }
+#pragma endregion

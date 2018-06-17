@@ -1,7 +1,5 @@
 #pragma once
 
-#define MANGOFF		extern "C"
-
 #ifdef DEBUG
 constexpr bool g_debug = true;
 #elif defined(NDEBUG)
