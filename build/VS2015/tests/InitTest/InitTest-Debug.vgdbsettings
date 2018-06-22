@@ -74,7 +74,7 @@
       <Entries>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.interface</Key>
-          <Value>interface/stlink-v2.cfg</Value>
+          <Value>interface/stlink-v2-1.cfg</Value>
         </KeyValue>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.cpu</Key>
@@ -106,7 +106,7 @@
         </KeyValue>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.commands.program</Key>
-          <Value />
+          <Value>load</Value>
         </KeyValue>
         <KeyValue>
           <Key>com.sysprogs.arm.openocd.commands.reset</Key>
@@ -142,7 +142,19 @@
   <CustomBuild>
     <PreSyncActions />
     <PreBuildActions />
-    <PostBuildActions />
+    <PostBuildActions>
+      <CustomActionBase xsi:type="CommandLineAction">
+        <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+        <Command>..\..\scripts\as-listing.bat</Command>
+        <Arguments>$(TOOLCHAIN_ROOT) $(TargetDir) $(TargetFileName) $(TargetFileNameWithoutExtension)</Arguments>
+        <WorkingDirectory>$(BuildDir)</WorkingDirectory>
+        <Environment>
+          <Records />
+          <EnvironmentSetupFiles />
+        </Environment>
+        <BackgroundMode>false</BackgroundMode>
+      </CustomActionBase>
+    </PostBuildActions>
     <PreCleanActions />
     <PostCleanActions />
   </CustomBuild>

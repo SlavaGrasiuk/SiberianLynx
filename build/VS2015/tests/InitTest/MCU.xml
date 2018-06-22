@@ -3,6 +3,7 @@
   <ToolchainID>gcc-arm-none-eabi-7.3.0</ToolchainID>
   <BspID>com.visualgdb.bsp.in-place</BspID>
   <BspVersion>1.0</BspVersion>
+  <MCUDefinitionFile>$(ProjectDir)\STM32F7x5.mcudef</MCUDefinitionFile>
   <MCUProperties>
     <Entries />
   </MCUProperties>

@@ -143,11 +143,5 @@ void core::InitSDRAM() {
 	}
 
 	/* Set refresh count */
-	/*tmpreg = FMC_Bank5_6->SDRTR;
-	FMC_Bank5_6->SDRTR = (tmpreg | (0x00000603 << 1));*/
 	MODIFY_REG(FMC_Bank5_6->SDRTR, FMC_SDRTR_COUNT, (823 << FMC_SDRTR_COUNT_Pos));
-
-	/* Disable write protection */
-/*	tmpreg = FMC_Bank5_6->SDCR[0];
-	FMC_Bank5_6->SDCR[0] = (tmpreg & 0xFFFFFDFF);*/
 }

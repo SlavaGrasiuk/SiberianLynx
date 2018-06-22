@@ -25,7 +25,7 @@
         </Format>
         <LiveMemorySettings>
           <Enabled>false</Enabled>
-          <BreakOnChanges>true</BreakOnChanges>
+          <BreakOnChanges>false</BreakOnChanges>
           <AutoRefresh>true</AutoRefresh>
           <RefreshTimeout>500</RefreshTimeout>
         </LiveMemorySettings>
@@ -33,7 +33,9 @@
         <DisplaySymbols>false</DisplaySymbols>
       </MemoryWindowPreferences>
     </MemoryWindowPreferences>
-    <FavoriteEmbeddedRegisters />
+    <FavoriteEmbeddedRegisters>
+      <string>RNG</string>
+    </FavoriteEmbeddedRegisters>
     <LiveVariables />
     <NestedLiveVariableSettings />
   </DebugPreferences>

@@ -50,7 +50,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0\</Toolchain>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
   </PropertyGroup>
@@ -61,7 +61,7 @@
     <OutDir>..\..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0\</Toolchain>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
   </PropertyGroup>
@@ -120,7 +120,8 @@
       <GenerateMapFile>true</GenerateMapFile>
       <AdditionalOptions>-nostartfiles -specs=nano.specs %(AdditionalOptions)</AdditionalOptions>
       <LibrarySearchDirectories>..\..\..\..\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
-      <AdditionalLibraryNames>core</AdditionalLibraryNames>
+      <AdditionalLibraryNames>
+      </AdditionalLibraryNames>
       <RemoveUnusedSections>true</RemoveUnusedSections>
     </Link>
   </ItemDefinitionGroup>
@@ -205,7 +206,8 @@
       <GenerateMapFile>true</GenerateMapFile>
       <AdditionalOptions>-nostartfiles -specs=nano.specs %(AdditionalOptions)</AdditionalOptions>
       <LibrarySearchDirectories>..\..\..\..\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
-      <AdditionalLibraryNames>core</AdditionalLibraryNames>
+      <AdditionalLibraryNames>
+      </AdditionalLibraryNames>
       <RemoveUnusedSections>true</RemoveUnusedSections>
     </Link>
   </ItemDefinitionGroup>

@@ -1,11 +1,4 @@
 #include <stm32f7xx.h>
-//#include <stm32f7xx_hal.h>
-//#include <commdef.hpp>
-
-
-/*uint32_t SystemCoreClock = 216'000'000;
-const uint8_t AHBPrescTable[16] = { 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9 };
-const uint8_t APBPrescTable[8] = { 0, 0, 0, 0, 1, 2, 3, 4 };*/ 
 
 namespace core {
 	void InitCPU();

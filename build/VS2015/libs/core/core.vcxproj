@@ -46,7 +46,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0\</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
@@ -61,7 +61,7 @@
     <TargetName>lib$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <Toolchain>D:\devel\msys64\home\slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0</Toolchain>
+    <Toolchain>D:\msys32\home\Slava\gcc\arm-bare\gcc-arm-none-eabi-7.3.0\</Toolchain>
     <GNUTargetType>StaticLibrary</GNUTargetType>
     <IntDir>..\..\..\..\temp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
     <OutDir>..\..\..\..\lib\$(Configuration)-$(Platform)\</OutDir>
@@ -118,6 +118,7 @@
       <SupportRTTI>false</SupportRTTI>
       <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy;..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc;..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include;..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\CMSIS\Include;..\..\..\..\src\core;..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc;..\..\..\..\src\3rdParty\scmRTOS\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STM32F765xx;USE_HAL_DRIVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>All</WarningLevel>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -188,6 +189,7 @@
       <Optimization>Og</Optimization>
       <AdditionalIncludeDirectories>..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc\Legacy;..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\STM32F7xx_HAL_Driver\Inc;..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include;..\..\..\..\src\3rdParty\STM32Cube_FW_F7_V1.6.0\Drivers\CMSIS\Include;..\..\..\..\src\core;..\..\..\..\src\3rdParty\scmRTOS\port\cortex\mx-gcc;..\..\..\..\src\3rdParty\scmRTOS\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STM32F765xx;USE_HAL_DRIVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>All</WarningLevel>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
